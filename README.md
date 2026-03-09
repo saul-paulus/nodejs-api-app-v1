@@ -26,6 +26,23 @@ This project is meticulously designed around three core architectural principles
 
 ---
 
+## 🧰 Tech Stack & Tools
+
+This template leverages the best modern tools to ensure stability, performance, and developer experience.
+
+| Technology/Tool   | Purpose                                                                                                                 |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| **Node.js**       | The runtime environment capable of handling high-throughput asynchronous operations.                                    |
+| **Express.js**    | The minimalist and fast web framework used for routing HTTP requests.                                                   |
+| **Awilix**        | Dependency Injection (DI) container ensuring loose coupling and testability across layers.                              |
+| **Winston**       | Centralized, enterprise-ready logging to write server activities and errors directly to rotating `.log` files.          |
+| **ESLint**        | Enforces consistent code quality and catches syntax errors early. Configured here with `airbnb-base` rules.             |
+| **Nodemon**       | A development utility that automatically restarts the node application when file changes in the directory are detected. |
+| **Dotenv**        | Securely loads environment variables from a `.env` file into `process.env`.                                             |
+| **Helmet & CORS** | Provides robust security by setting various HTTP headers and managing Cross-Origin restrictions.                        |
+
+---
+
 ## 📂 Folder Structure
 
 The directory structure is purposely domain-driven.

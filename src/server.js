@@ -1,6 +1,7 @@
 import { setupDIContainer } from './container.js';
 import { createApp } from './app.js';
 import config from './config/index.js';
+import logger from './config/logger.js';
 
 const startServer = async () => {
   try {
@@ -12,24 +13,27 @@ const startServer = async () => {
 
     // 3. Jalankan Server HTTP
     const server = app.listen(config.port, () => {
-      console.log(`Server is running at http://localhost:${config.port} | Mode: ${config.env}`);
+      logger.info(`Server is running at http://localhost:${config.port} | Mode: ${config.env}`);
     });
 
     // 4. Graceful Shutdown & Global Error Handlers
     process.on('uncaughtException', (err) => {
-      console.error('UNCAUGHT EXCEPTION! 💥 Shutting down...', err.name, err.message);
-      // Anda mungkin ingin menambah logic log error ke sistem logging eksternal
+      logger.error(
+        `UNCAUGHT EXCEPTION! 💥 Shutting down...\n${err.name}: ${err.message}\n${err.stack}`,
+      );
       process.exit(1);
     });
 
     process.on('unhandledRejection', (err) => {
-      console.error('UNHANDLED REJECTION! 💥 Shutting down...', err.name, err.message);
+      logger.error(
+        `UNHANDLED REJECTION! 💥 Shutting down...\n${err.name}: ${err.message}\n${err.stack}`,
+      );
       server.close(() => {
         process.exit(1);
       });
     });
   } catch (err) {
-    console.error(`Tidak dapat menyalakan server: ${err.message}`, err);
+    logger.error(`Tidak dapat menyalakan server: ${err.message}\n${err.stack}`);
     process.exit(1);
   }
 };
