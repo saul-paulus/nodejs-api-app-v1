@@ -1,0 +1,30 @@
+{
+    "name": "api-expresjs",
+    "version": "1.0.0",
+    "description": "start build of api with expresjs",
+    "main": "index.js",
+    "scripts": {
+        "start": "node src/server.js",
+        "dev": "nodemon src/server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "api",
+        "nodejs-api",
+        "expresjs-api"
+    ],
+    "author": "saul paulus (Ixspx)",
+    "license": "MIT",
+    "type": "commonjs",
+    "dependencies": {
+        "awilix": "^13.0.3",
+        "cors": "^2.8.6",
+        "dotenv": "^17.3.1",
+        "express": "^5.2.1",
+        "helmet": "^8.1.0",
+        "http-status-codes": "^2.3.0"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.14"
+    }
+}
