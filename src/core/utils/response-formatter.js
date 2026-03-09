@@ -3,12 +3,12 @@
  * @param {any} data - Datanya (Array/Object/String)
  * @param {string} message - Pesan sukses
  */
-const successResponse = (data = null, message = 'Success') => {
-    return {
-        success: true,
-        message,
-        data,
-    };
+export const successResponse = (data = null, message = 'Success') => {
+  return {
+    success: true,
+    message,
+    data,
+  };
 };
 
 /**
@@ -16,20 +16,15 @@ const successResponse = (data = null, message = 'Success') => {
  * @param {string} message - Pesan error utama
  * @param {Array|Object} errors - Detail error (Misal validasi field gagal)
  */
-const errorResponse = (message = 'Error', errors = null) => {
-    const response = {
-        success: false,
-        message,
-    };
+export const errorResponse = (message = 'Error', errors = null) => {
+  const response = {
+    success: false,
+    message,
+  };
 
-    if (errors) {
-        response.errors = errors;
-    }
+  if (errors) {
+    response.errors = errors;
+  }
 
-    return response;
-};
-
-module.exports = {
-    successResponse,
-    errorResponse,
+  return response;
 };

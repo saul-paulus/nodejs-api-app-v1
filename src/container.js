@@ -1,10 +1,11 @@
-const {
+import {
     createContainer,
     InjectionMode
-} = require('awilix');
+} from 'awilix';
 
 // Registrasi masing-masing modul
-const healthModule = require('./modules/health');
+import * as healthModule from './modules/health/index.js';
+
 
 // Buat container secara global (InjectionMode.PROXY sangat disarankan untuk clean architecture)
 const container = createContainer({
@@ -14,8 +15,7 @@ const container = createContainer({
 /**
  * Fungsi untuk melakukan registrasi seluruh dependency aplikasi
  */
-const setupDIContainer = () => {
-
+export const setupDIContainer = () => {
     // Registrasi Core Dependencies (Konfig DB, Logger, dsb bisa ditaruh di sini nantinya)
 
     // Registrasi Modul-modul fitur
@@ -24,8 +24,4 @@ const setupDIContainer = () => {
     // userModule.register(container); // Nanti untuk fitur user
 
     return container;
-};
-
-module.exports = {
-    setupDIContainer,
 };

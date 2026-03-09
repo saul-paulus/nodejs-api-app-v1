@@ -6,6 +6,8 @@
     "scripts": {
         "start": "node src/server.js",
         "dev": "nodemon src/server.js",
+        "lint": "eslint src",
+        "lint:fix": "eslint src --fix",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [
@@ -15,7 +17,7 @@
     ],
     "author": "saul paulus (Ixspx)",
     "license": "MIT",
-    "type": "commonjs",
+    "type": "module",
     "dependencies": {
         "awilix": "^13.0.3",
         "cors": "^2.8.6",
@@ -25,6 +27,13 @@
         "http-status-codes": "^2.3.0"
     },
     "devDependencies": {
-        "nodemon": "^3.1.14"
+        "eslint": "^8.57.1",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-import": "^2.32.0",
+        "eslint-plugin-prettier": "^5.5.5",
+        "globals": "^17.4.0",
+        "nodemon": "^3.1.14",
+        "prettier": "^3.8.1"
     }
 }

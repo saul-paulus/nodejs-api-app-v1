@@ -1,20 +1,16 @@
-const {
+import HealthController from './health.controller.js';
+import healthRoutes from './health.routes.js';
+import {
     asClass,
     asFunction
-} = require('awilix');
-const HealthController = require('./health.controller');
-const healthRoutes = require('./health.routes');
+} from 'awilix';
 
 /**
  * Mendaftarkan controller dan router dari modul health ke container utama
  */
-const register = (container) => {
+export const register = (container) => {
     container.register({
         healthController: asClass(HealthController).scoped(),
         healthRouter: asFunction(healthRoutes).singleton(),
     });
-};
-
-module.exports = {
-    register,
 };
