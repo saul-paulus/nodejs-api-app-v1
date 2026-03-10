@@ -8,7 +8,15 @@
         "dev": "nodemon src/server.js",
         "lint": "eslint src",
         "lint:fix": "eslint src --fix",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "jest -i",
+        "prisma:generate": "prisma generate",
+        "prisma:migrate": "prisma migrate dev",
+        "prisma:studio": "prisma studio"
+    },
+    "jest": {
+        "transform": {
+            "^.+\\.[t|j]sx?$": "babel-jest"
+        }
     },
     "keywords": [
         "api",
@@ -29,6 +37,11 @@
         "winston-daily-rotate-file": "^5.0.0"
     },
     "devDependencies": {
+        "@babel/preset-env": "^7.29.0",
+        "@types/bcrypt": "^6.0.0",
+        "@types/express": "^5.0.6",
+        "@types/jest": "^30.0.0",
+        "@types/supertest": "^7.2.0",
         "eslint": "^8.57.1",
         "eslint-config-airbnb-base": "^15.0.0",
         "eslint-config-prettier": "^10.1.8",
@@ -36,6 +49,7 @@
         "eslint-plugin-prettier": "^5.5.5",
         "globals": "^17.4.0",
         "nodemon": "^3.1.14",
-        "prettier": "^3.8.1"
+        "prettier": "^3.8.1",
+        "prisma": "^6.19.2"
     }
 }

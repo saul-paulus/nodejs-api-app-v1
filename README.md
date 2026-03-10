@@ -40,6 +40,11 @@ This template leverages the best modern tools to ensure stability, performance, 
 | **Nodemon**       | A development utility that automatically restarts the node application when file changes in the directory are detected. |
 | **Dotenv**        | Securely loads environment variables from a `.env` file into `process.env`.                                             |
 | **Helmet & CORS** | Provides robust security by setting various HTTP headers and managing Cross-Origin restrictions.                        |
+| **Prisma**        | Object-Relational Mapping (ORM) for database management.                                                                |
+| **Bcrypt**        | Password hashing for secure authentication.                                                                             |
+| **Jest**          | Testing framework for unit and integration testing.                                                                     |
+| **Joi**           | Schema description language and validator for JavaScript objects.                                                       |
+| **Babel**         | JavaScript compiler that converts code using new syntax into backward-compatible versions of JavaScript.                |
 
 ---
 
