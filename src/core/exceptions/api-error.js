@@ -3,9 +3,9 @@
  * Daripada menggunakan 'throw new Error()', gunakan ini untuk response yang lebih seragam.
  */
 class ApiError extends Error {
-    constructor(statusCode, message, isOperational = true, stack = '') {
+    constructor(responseCode, message, isOperational = true, stack = '') {
         super(message);
-        this.statusCode = statusCode;
+        this.responseCode = responseCode;
         this.isOperational = isOperational;
 
         // Gunakan custom stack trace bila tersedia

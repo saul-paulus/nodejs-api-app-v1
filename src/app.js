@@ -8,6 +8,8 @@ import {
     errorHandler
 } from './core/exceptions/error-handler.js';
 import ApiError from './core/exceptions/api-error.js';
+import swaggerUi from 'swagger-ui-express';
+import swaggerSpec from './swagger.js';
 
 /**
  * Membuat dan mengkonfigurasi aplikasi Express
@@ -37,6 +39,9 @@ export const createApp = (container) => {
 
     // Daftarkan route dengan prefix (Contoh V1 API)
     app.use('/api/v1/health', healthRouter);
+
+    // Swagger
+    app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
     // =====================
     // 404 & ERROR HANDLING

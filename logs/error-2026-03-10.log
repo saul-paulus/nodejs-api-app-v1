@@ -10,3 +10,15 @@
     at urlencodedParser (/srv/http/start-kit-V1/api-expresjs/node_modules/body-parser/lib/types/urlencoded.js:57:5)
     at Layer.handleRequest (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/layer.js:152:17)
     at trimPrefix (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:342:13)
+[2026-03-10 11:35:04.041 AM] error: 404 - API Route tidak ditemukan - /api-docs/ - GET - ::ffff:127.0.0.1
+[2026-03-10 11:35:04.041 AM] error: Error: API Route tidak ditemukan
+    at file:///srv/http/start-kit-V1/api-expresjs/src/app.js:49:14
+    at Layer.handleRequest (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:342:13)
+    at /srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:297:9
+    at processParams (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:582:12)
+    at next (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:291:5)
+    at read (/srv/http/start-kit-V1/api-expresjs/node_modules/body-parser/lib/read.js:53:5)
+    at urlencodedParser (/srv/http/start-kit-V1/api-expresjs/node_modules/body-parser/lib/types/urlencoded.js:57:5)
+    at Layer.handleRequest (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:342:13)
