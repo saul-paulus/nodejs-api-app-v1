@@ -22,3 +22,51 @@
     at urlencodedParser (/srv/http/start-kit-V1/api-expresjs/node_modules/body-parser/lib/types/urlencoded.js:57:5)
     at Layer.handleRequest (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/layer.js:152:17)
     at trimPrefix (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:342:13)
+[2026-03-10 09:35:52.264 PM] error: undefined - API Route tidak ditemukan - /users - GET - ::ffff:127.0.0.1
+[2026-03-10 09:35:52.265 PM] error: Error: API Route tidak ditemukan
+    at file:///srv/http/start-kit-V1/api-expresjs/src/app.js:56:14
+    at Layer.handleRequest (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:342:13)
+    at /srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:297:9
+    at processParams (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:582:12)
+    at next (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:291:5)
+    at read (/srv/http/start-kit-V1/api-expresjs/node_modules/body-parser/lib/read.js:53:5)
+    at urlencodedParser (/srv/http/start-kit-V1/api-expresjs/node_modules/body-parser/lib/types/urlencoded.js:57:5)
+    at Layer.handleRequest (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:342:13)
+[2026-03-10 09:35:54.206 PM] error: undefined - API Route tidak ditemukan - /users - GET - ::ffff:127.0.0.1
+[2026-03-10 09:35:54.206 PM] error: Error: API Route tidak ditemukan
+    at file:///srv/http/start-kit-V1/api-expresjs/src/app.js:56:14
+    at Layer.handleRequest (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:342:13)
+    at /srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:297:9
+    at processParams (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:582:12)
+    at next (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:291:5)
+    at read (/srv/http/start-kit-V1/api-expresjs/node_modules/body-parser/lib/read.js:53:5)
+    at urlencodedParser (/srv/http/start-kit-V1/api-expresjs/node_modules/body-parser/lib/types/urlencoded.js:57:5)
+    at Layer.handleRequest (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:342:13)
+[2026-03-10 09:35:56.141 PM] error: undefined - API Route tidak ditemukan - /users - GET - ::ffff:127.0.0.1
+[2026-03-10 09:35:56.141 PM] error: Error: API Route tidak ditemukan
+    at file:///srv/http/start-kit-V1/api-expresjs/src/app.js:56:14
+    at Layer.handleRequest (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:342:13)
+    at /srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:297:9
+    at processParams (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:582:12)
+    at next (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:291:5)
+    at read (/srv/http/start-kit-V1/api-expresjs/node_modules/body-parser/lib/read.js:53:5)
+    at urlencodedParser (/srv/http/start-kit-V1/api-expresjs/node_modules/body-parser/lib/types/urlencoded.js:57:5)
+    at Layer.handleRequest (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:342:13)
+[2026-03-10 09:36:04.599 PM] error: undefined - API Route tidak ditemukan - /users - GET - ::ffff:127.0.0.1
+[2026-03-10 09:36:04.599 PM] error: Error: API Route tidak ditemukan
+    at file:///srv/http/start-kit-V1/api-expresjs/src/app.js:56:14
+    at Layer.handleRequest (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:342:13)
+    at /srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:297:9
+    at processParams (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:582:12)
+    at next (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:291:5)
+    at read (/srv/http/start-kit-V1/api-expresjs/node_modules/body-parser/lib/read.js:53:5)
+    at urlencodedParser (/srv/http/start-kit-V1/api-expresjs/node_modules/body-parser/lib/types/urlencoded.js:57:5)
+    at Layer.handleRequest (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:342:13)

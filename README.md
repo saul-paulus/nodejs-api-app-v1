@@ -45,6 +45,7 @@ This template leverages the best modern tools to ensure stability, performance, 
 | **Jest**          | Testing framework for unit and integration testing.                                                                     |
 | **Joi**           | Schema description language and validator for JavaScript objects.                                                       |
 | **Babel**         | JavaScript compiler that converts code using new syntax into backward-compatible versions of JavaScript.                |
+| **Swagger**       | Doc for Spec API                                                                                                        |
 
 ---
 

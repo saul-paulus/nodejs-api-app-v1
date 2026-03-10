@@ -22,7 +22,11 @@ export const createApp = (container) => {
     // =====================
     // GOBAL MIDDLEWARES
     // =====================
-    app.use(helmet());
+    app.use(
+        helmet({
+            contentSecurityPolicy: false,
+        })
+    );
     app.use(cors());
     app.use(express.json()); // Parsing application/json
     app.use(
