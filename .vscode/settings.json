@@ -1,0 +1,13 @@
+{
+   "prisma.pinToPrisma6": true,
+   "prettier.enable": false,
+   "eslint.enable": true,
+   "eslint.format.enable": true,
+   "editor.formatOnSave": true,
+   "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+   },
+   "[javascript]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+   }
+}

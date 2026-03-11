@@ -24,15 +24,19 @@
  *                       type: string
  *                     password:
  *                       type: string
- *                     nm_role:
+ *                     role:
  *                       type: string
+ *                     id_role:
+ *                       type: string
+ *                     codeuker:
+ *                       type: String
  *                     created_at:
  *                       type: string
  *                     updated_at:
  *                       type: string
  *         '500':
  *           description: Internal server error
- * 
+ *
  *     post:
  *       tags:
  *         - Users
@@ -50,8 +54,6 @@
  *                   type: string
  *                 password:
  *                   type: string
- *                 role:
- *                   type: integer
  *       responses:
  *         '201':
  *           description: User created successfully
@@ -78,7 +80,7 @@
  *           description: Bad request
  *         '500':
  *           description: Internal server error
- * 
+ *
  *   /users/{id}:
  *     get:
  *       tags:
@@ -116,7 +118,7 @@
  *           description: User not found
  *         '500':
  *           description: Internal server error
- * 
+ *
  *     put:
  *       tags:
  *         - Users
@@ -168,7 +170,7 @@
  *           description: Bad request
  *         '500':
  *           description: Internal server error
- * 
+ *
  *     patch:
  *       tags:
  *         - Users
@@ -216,7 +218,7 @@
  *                     type: string
  *                   updated_at:
  *                     type: string
- * 
+ *
  *     delete:
  *       tags:
  *         - Users

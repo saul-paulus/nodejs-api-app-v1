@@ -1,0 +1,52 @@
+import config from "eslint-config-xo";
+import {
+    defineConfig
+} from "eslint/config";
+
+export default defineConfig([
+    // dasar XO style
+    config,
+
+    // pengaturan untuk semua JS files di src
+    {
+        files: ["src/**/*.js"],
+
+        env: {
+            node: true, // Node.js globals
+            es2022: true, // modern JS
+            jest: true, // testing
+        },
+
+        parserOptions: {
+            ecmaVersion: "latest",
+            sourceType: "module",
+        },
+
+        plugins: ["js"], // plugin yang direkomendasikan XO
+
+        extends: ["plugin:js/recommended"],
+
+        rules: {
+            // clean code & Node.js rules
+            semi: ["error", "always"], // titik koma wajib
+            "prefer-const": ["error", {
+                ignoreReadBeforeAssign: true
+            }],
+            eqeqeq: ["error", "always"], // pakai ===
+            "no-unused-vars": ["warn", {
+                argsIgnorePattern: "^_"
+            }],
+            "no-undef": "warn",
+            "no-console": "warn", // gunakan logger
+            "consistent-return": "error",
+            "no-throw-literal": "error",
+
+            // optional: panjang maksimal baris
+            "max-len": ["warn", {
+                code: 120
+            }],
+        },
+
+        ignorePatterns: ["__tests__/**"], // ignore test files
+    },
+]);

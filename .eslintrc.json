@@ -10,6 +10,7 @@
   "parserOptions": {
     "ecmaVersion": "latest"
   },
+  "ignorePatterns": ["src/generated/"],
   "rules": {
     "no-console": "off",
     "import/extensions": "off",

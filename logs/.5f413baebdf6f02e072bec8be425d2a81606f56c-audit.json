@@ -4,10 +4,17 @@
         "amount": 30
     },
     "auditLog": "logs/.5f413baebdf6f02e072bec8be425d2a81606f56c-audit.json",
-    "files": [{
-        "date": 1773081051337,
-        "name": "logs/combined-2026-03-10.log",
-        "hash": "05910e0ea2d37052823b4251964b38842d516052afd833c16070d2b8cf3ff4b8"
-    }],
+    "files": [
+        {
+            "date": 1773081051337,
+            "name": "logs/combined-2026-03-10.log",
+            "hash": "05910e0ea2d37052823b4251964b38842d516052afd833c16070d2b8cf3ff4b8"
+        },
+        {
+            "date": 1773210782532,
+            "name": "logs/combined-2026-03-11.log",
+            "hash": "c161195b5deeecb6c56d8af08cb7fcfeb3db188407f56caa233bc47b8e526856"
+        }
+    ],
     "hashType": "sha256"
 }
