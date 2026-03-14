@@ -1,0 +1,40 @@
+[2026-03-14 03:10:00.428 PM] error: 404 - User not found - /api/v1/user/all - GET - ::ffff:127.0.0.1
+[2026-03-14 03:10:00.429 PM] error: Error: User not found
+    at Object.getUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/user.service.js:33:13)
+    at async UserController.handlerGetUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/user.controller.js:42:20)
+[2026-03-14 05:24:41.668 PM] error: 404 - User not found - /api/v1/user/all - GET - ::ffff:127.0.0.1
+[2026-03-14 05:24:41.668 PM] error: Error: User not found
+    at Object.getUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/user.service.js:33:13)
+    at async UserController.handlerGetUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/user.controller.js:42:20)
+[2026-03-14 05:47:06.167 PM] error: 404 - User not found - /api/v1/user/all - GET - ::ffff:127.0.0.1
+[2026-03-14 05:47:06.167 PM] error: Error: User not found
+    at Object.getUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/user.service.js:33:13)
+    at async UserController.handlerGetUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/user.controller.js:42:20)
+[2026-03-14 05:58:54.502 PM] error: 404 - User not found - /api/v1/user/all - GET - ::ffff:127.0.0.1
+[2026-03-14 05:58:54.503 PM] error: Error: User not found
+    at Object.getUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/user.service.js:33:13)
+    at async UserController.handlerGetUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/user.controller.js:42:20)
+[2026-03-14 06:18:38.687 PM] error: 404 - User not found - /api/v1/user/all - GET - ::ffff:127.0.0.1
+[2026-03-14 06:18:38.688 PM] error: Error: User not found
+    at Object.getUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/user.service.js:33:13)
+    at async UserController.handlerGetUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/user.controller.js:42:20)
+[2026-03-14 06:21:49.769 PM] error: 404 - User not found - /api/v1/user/all - GET - ::ffff:127.0.0.1
+[2026-03-14 06:21:49.770 PM] error: Error: User not found
+    at Object.getUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/user.service.js:33:13)
+    at async UserController.handlerGetUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/user.controller.js:42:20)
+[2026-03-14 06:27:31.621 PM] error: 404 - User not found - /api/v1/user/all - GET - ::ffff:127.0.0.1
+[2026-03-14 06:27:31.622 PM] error: Error: User not found
+    at Object.getUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/user.service.js:39:13)
+    at async UserController.handlerGetUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/user.controller.js:42:20)
+[2026-03-14 06:42:29.917 PM] error: 404 - User not found - /api/v1/user/all - GET - ::ffff:127.0.0.1
+[2026-03-14 06:42:29.918 PM] error: Error: User not found
+    at Object.getUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/application/use-cases/user.service.js:39:13)
+    at async UserController.handlerGetUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.controller.js:42:20)
+[2026-03-14 06:42:31.051 PM] error: 404 - User not found - /api/v1/user/all - GET - ::ffff:127.0.0.1
+[2026-03-14 06:42:31.051 PM] error: Error: User not found
+    at Object.getUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/application/use-cases/user.service.js:39:13)
+    at async UserController.handlerGetUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.controller.js:42:20)
+[2026-03-14 06:51:41.905 PM] error: 404 - User not found - /api/v1/user/all - GET - ::ffff:127.0.0.1
+[2026-03-14 06:51:41.905 PM] error: Error: User not found
+    at Object.getUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/application/use-cases/user.service.js:35:13)
+    at async UserController.handlerGetUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.controller.js:42:20)

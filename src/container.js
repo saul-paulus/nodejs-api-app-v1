@@ -3,6 +3,7 @@ import prisma from './infrastructure/database/index.js';
 
 // Registrasi masing-masing modul
 import * as healthModule from './modules/health/index.js';
+import * as userModule from './modules/user/index.js';
 
 // Buat container secara global (InjectionMode.PROXY sangat disarankan untuk clean architecture)
 const container = createContainer({
@@ -20,8 +21,7 @@ export const setupDIContainer = () => {
 
   // Registrasi Modul-modul fitur
   healthModule.register(container);
-
-  // userModule.register(container); // Nanti untuk fitur user
+  userModule.register(container);
 
   return container;
 };

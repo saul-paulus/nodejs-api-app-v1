@@ -1,0 +1,8 @@
+[2026-03-13 08:58:39.171 PM] error: 404 - User not found - /api/v1/user/all - GET - ::ffff:127.0.0.1
+[2026-03-13 08:58:39.171 PM] error: Error: User not found
+    at Object.getUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/user.service.js:33:13)
+    at async UserController.handlerGetUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/user.controller.js:42:20)
+[2026-03-13 08:59:45.224 PM] error: 404 - User not found - /api/v1/user/all - GET - ::ffff:127.0.0.1
+[2026-03-13 08:59:45.225 PM] error: Error: User not found
+    at Object.getUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/user.service.js:33:13)
+    at async UserController.handlerGetUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/user.controller.js:42:20)

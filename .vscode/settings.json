@@ -8,6 +8,6 @@
       "source.fixAll.eslint": "explicit"
    },
    "[javascript]": {
-      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+      "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
    }
 }

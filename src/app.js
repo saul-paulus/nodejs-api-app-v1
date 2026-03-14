@@ -35,12 +35,16 @@ export const createApp = (container) => {
   // =====================
   // Tarik router yang telah di-inject dari container
   const healthRouter = container.resolve('healthRouter');
+  const userRouter = container.resolve('userRouter');
 
   // Daftarkan route dengan prefix (Contoh V1 API)
   app.use('/api/v1/health', healthRouter);
+  app.use('/api/v1/user', userRouter);
 
   // Swagger
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+  app.use('/register', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+  app.use('/all', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
   // =====================
   // 404 & ERROR HANDLING

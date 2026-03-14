@@ -1,0 +1,10 @@
+model User {
+  id          Int      @id @default(autoincrement())
+  id_personal String   @unique
+  username    String
+  password    String
+  codeuker    String
+  id_wewenang Int
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+}

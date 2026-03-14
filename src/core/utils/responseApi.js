@@ -4,19 +4,19 @@
  * @param {string} message - Pesan sukses
  */
 export const successResponse = (
-  data = null,
+  responseCode = 200,
   message = 'The request has been processed successfully',
-  status = 200,
+  data = null,
   meta = [],
   links = [],
 ) => {
   return {
     success: true,
-    responseCode: status,
-    message,
-    data,
-    meta,
-    links,
+    responseCode: responseCode || 200,
+    message: message || 'The request has been processed successfully',
+    data: data || null,
+    meta: meta || [],
+    links: links || [],
   };
 };
 
@@ -25,11 +25,15 @@ export const successResponse = (
  * @param {string} message - Pesan error utama
  * @param {Array|Object} errors - Detail error (Misal validasi field gagal)
  */
-export const errorResponse = (message = 'Error', status = 400, errors = null) => {
+export const errorResponse = (
+  responseCode = 400,
+  message = 'The request has not been processed',
+  errors = null,
+) => {
   const response = {
     success: false,
-    responseCode: status,
-    message,
+    responseCode: responseCode || 400,
+    message: message || 'The request has not been processed',
   };
 
   if (errors) {
@@ -37,4 +41,9 @@ export const errorResponse = (message = 'Error', status = 400, errors = null) =>
   }
 
   return response;
+};
+
+export default {
+  successResponse,
+  errorResponse,
 };

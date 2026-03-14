@@ -55,29 +55,38 @@ The directory structure is purposely domain-driven.
 
 ```text
 api-expresjs/
-├── src/
-│   ├── app.js                 # Express app setup, global middlewares, and unified error handler
-│   ├── server.js              # Application entry point: Bootstraps the DI container and starts the server
-│   ├── container.js           # Awilix DI Container configuration and module registrations
-│   │
-│   ├── config/                # Environment variables and application configurations loader (.env)
-│   │
-│   ├── core/                  # Core application logic shared across all modules
-│   │   ├── exceptions/        # Custom ApiError classes and global error handlers
-│   │   ├── middlewares/       # Shared Express middlewares (Auth, Validation, etc.)
-│   │   └── utils/             # Helper utilities like custom Response Formatters
-│   │
-│   ├── infrastructure/        # Adapters for external systems (Database Connections, Redis, external APIs)
-│   │
-│   └── modules/               # 👈 Domain-driven feature modules reside here
-│       └── health/            # Example feature/module (Health Check)
-│           ├── health.controller.js  # Presentation Layer (HTTP Request/Response)
-│           ├── health.routes.js      # Express Router mappings
-│           └── index.js              # DI Container registration entry point for this module
+src/
+├── core/                   # Cross-cutting concerns & Shared Domain logic
+│   ├── exceptions/         # Global error types (ApiError, DomainError)
+│   ├── middlewares/        # Express global middlewares
+│   └── utils/              # Shared helper functions
+├── modules/                # Bounded Contexts (Feature-based)
+│   └── user/               # User Module
+│       ├── domain/         # Layer 1: Entities & Business Rules
+│       │   ├── user.js     # User Entity
+│       │   └── errors.js   # User-specific Domain Errors
+│       ├── application/    # Layer 2: Use Cases & Application Logic
+│       │   ├── use-cases/  # Orchestrates business logic
+│       │   │   ├── register-user.js
+│       │   │   └── get-user.js
+│       │   └── dtos/       # Data Transfer Objects
+│       ├── infrastructure/ # Layer 3: External Implementations
+│       │   ├── persistence/ # Database (Prisma)
+│       │   │   └── prisma-user.repository.js
+│       │   ├── http/        # Web layer (Controller, Routes)
+│       │   │   ├── user.controller.js
+│       │   │   └── user.routes.js
+│       │   └── validation/  # Request validation logic
+│       └── index.js         # Entry point (DI registration)
+└── infrastructure/          # Layer 4: Frameworks & Drivers
+    ├── database/            # Database client setup (Prisma)
+    └── third-party/         # External service clients (Email, S3, etc.)
 ...
 ```
-
 ---
+
+
+
 
 ## 🔄 Request Lifecycle & Layered Flow
 
@@ -93,7 +102,7 @@ All incoming requests adhere strictly to the following layered pipeline, communi
   Controller      (Parses request, validates input, formats unified response)
        │
        ▼
-   Service        (The core Business/Domain Logic. HTTP-agnostic)
+   Service        (The core Business/Logic. Layered in Application layer)
        │
        ▼
   Repository      (Data Access Layer. Communicates with Database/ORM)
@@ -102,6 +111,31 @@ All incoming requests adhere strictly to the following layered pipeline, communi
    Database       (PostgreSQL, MongoDB, MySQL, etc.)
 ```
 
+### 📖 Layer Descriptions
+
+#### 1. Domain Layer (`modules/*/domain/`)
+- **Purpose**: Pure business logic and domain definitions.
+- **Content**: Entities, Value Objects, Domain Services.
+- **Rule**: NO dependencies on other layers (DB, Express, etc.).
+
+#### 2. Application Layer (`modules/*/application/`)
+- **Purpose**: Orchestrates the flow of data to and from the domain layer.
+- **Content**: Use cases (Services), Repository Interfaces, DTOs.
+- **Rule**: Can depend on the Domain Layer.
+
+#### 3. Infrastructure Layer (`modules/*/infrastructure/`)
+- **Purpose**: Implementations of external tools and frameworks.
+- **Content**: API Controllers, Repository implementations (Prisma), Router definitions, Validation.
+- **Rule**: Can depend on Application and Domain layers.
+
+#### 4. Core Layer (`src/core/`)
+- **Purpose**: Shared utilities and base classes.
+- **Content**: Base Exception classes, Global Middlewares, Validation utilities, logging.
+
+### 💡 Why this structure?
+- **Highly Modular**: Adding a new feature means adding a new folder in `modules/`.
+- **Easy to Test**: Use cases and Entities can be tested without a database or server.
+- **Decoupled**: You can swap Prisma for another ORM by only changing the `persistence/` folder inside the module.
 ---
 
 ## 🚀 Getting Started
@@ -153,14 +187,19 @@ curl http://localhost:3000/api/v1/health
 
 ## 🛠 Adding a New Feature (Module)
 
-To build a new feature (e.g., `Users`), follow these steps within the `src/modules` directory:
+To build a new feature (e.g., `Users`), follow these structured steps within the `src/modules` directory:
 
-1. Create a folder: `src/modules/users`.
-2. Create your Data Access Layer: `users.repository.js`.
-3. Create your Business Logic Layer: `users.service.js` (injecting the repository through the constructor).
-4. Create your Presentation Layer: `users.controller.js` (injecting the service through the constructor).
-5. Map your endpoints: `users.routes.js`.
-6. Export the module components via an `index.js` file to register them into the main `src/container.js`.
+1. **Create Module Directory**: `src/modules/users`.
+2. **Setup Layers**:
+   - `application/use-cases/`: Business logic services.
+   - `domain/`: Entities and domain errors.
+   - `infrastructure/http/`: Controllers and routes.
+   - `infrastructure/persistence/`: Repository implementation.
+   - `infrastructure/validation/`: Request validation and schemas.
+3. **Register Persistence**: Implement `prisma-users.repository.js`.
+4. **Register Logic**: Implement `users.service.js` (injecting the repository).
+5. **Register Presentation**: Implement `users.controller.js` and `users.routes.js`.
+6. **Export & Register**: Create/update `index.js` within the module to register all components into the main DI container.
 
 ---
 

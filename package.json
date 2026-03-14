@@ -9,9 +9,10 @@
         "lint": "eslint src",
         "lint:fix": "eslint src --fix",
         "test": "jest -i",
-        "prisma:generate": "prisma generate",
-        "prisma:migrate": "prisma migrate dev",
-        "prisma:studio": "prisma studio"
+        "prisma:schema:build": "node scripts/prisma-merge-schema.mjs",
+        "prisma:generate": "npm run prisma:schema:build && prisma generate",
+        "prisma:migrate": "npm run prisma:schema:build && prisma migrate dev",
+        "prisma:studio": "npm run prisma:schema:build && prisma studio"
     },
     "jest": {
         "transform": {
@@ -29,6 +30,7 @@
     "dependencies": {
         "@prisma/client": "^6.19.2",
         "awilix": "^13.0.3",
+        "bcrypt": "^6.0.0",
         "cors": "^2.8.6",
         "dotenv": "^17.3.1",
         "express": "^5.2.1",

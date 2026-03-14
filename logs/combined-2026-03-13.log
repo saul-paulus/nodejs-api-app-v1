@@ -1,0 +1,128 @@
+[2026-03-13 07:27:39.408 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 07:27:39.425 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 07:27:39.431 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:05:05.337 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:05:05.356 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:05:05.365 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:05:08.352 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:05:08.371 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:05:08.379 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:05:35.029 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:05:35.047 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:05:35.055 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:05:37.156 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:05:37.173 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:05:37.184 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:05:47.144 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:05:47.162 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:05:47.173 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:06:18.159 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:06:18.179 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:06:18.187 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:07:08.061 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:07:08.079 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:07:08.091 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:12:48.833 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:12:48.850 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:12:48.858 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:12:59.647 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:12:59.665 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:12:59.673 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:14:37.708 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:14:37.726 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:14:37.739 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:15:56.800 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:15:56.819 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:15:56.827 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:16:06.644 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:16:06.660 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:16:06.669 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:18:16.609 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:18:16.628 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:18:16.636 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:18:48.860 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:18:48.878 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:18:48.885 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:18:52.494 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:18:52.512 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:18:52.520 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:19:14.968 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:19:14.985 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:19:14.995 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:19:25.532 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:19:25.549 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:19:25.557 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:19:28.633 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:19:28.650 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:19:28.658 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:20:40.779 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:20:40.797 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:20:40.805 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:20:43.372 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:20:43.388 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:20:43.396 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:21:59.716 PM] info: Mematikan server (Graceful Shutdown)...
+[2026-03-13 08:21:59.720 PM] info: Database connection closed gracefully.
+[2026-03-13 08:22:03.085 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:22:03.107 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:22:03.119 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:27:23.068 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:27:23.087 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:27:23.095 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:29:44.491 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:29:44.508 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:29:44.517 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:29:47.515 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:29:47.533 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:29:47.542 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:31:23.308 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:31:23.327 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:31:23.340 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:31:39.711 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:31:39.729 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:31:39.737 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:55:39.851 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:55:39.872 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:55:39.880 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:55:40.800 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:55:40.820 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:55:40.828 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:56:27.536 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:56:27.558 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:56:27.569 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:56:33.460 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:56:33.492 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:56:33.501 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:56:40.798 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:56:40.822 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:56:40.832 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:56:53.194 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:56:53.212 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:56:53.220 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:57:01.553 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:57:01.573 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:57:01.581 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:57:09.992 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:57:10.010 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:57:10.019 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:57:10.775 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:57:10.793 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:57:10.806 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:58:11.615 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 08:58:11.634 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 08:58:11.644 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-13 08:58:39.146 PM] debug: [Prisma Query] duration: 10ms - query: SELECT 1
+[2026-03-13 08:58:39.168 PM] debug: [Prisma Query] duration: 16ms - query: SELECT "public"."User"."id", "public"."User"."username", "public"."User"."id_personal" FROM "public"."User" WHERE ("public"."User"."id_personal" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-13 08:58:39.171 PM] error: 404 - User not found - /api/v1/user/all - GET - ::ffff:127.0.0.1
+[2026-03-13 08:58:39.171 PM] error: Error: User not found
+    at Object.getUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/user.service.js:33:13)
+    at async UserController.handlerGetUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/user.controller.js:42:20)
+[2026-03-13 08:59:45.222 PM] debug: [Prisma Query] duration: 0ms - query: SELECT 1
+[2026-03-13 08:59:45.223 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."username", "public"."User"."id_personal" FROM "public"."User" WHERE ("public"."User"."id_personal" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-13 08:59:45.224 PM] error: 404 - User not found - /api/v1/user/all - GET - ::ffff:127.0.0.1
+[2026-03-13 08:59:45.225 PM] error: Error: User not found
+    at Object.getUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/user.service.js:33:13)
+    at async UserController.handlerGetUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/user.controller.js:42:20)
+[2026-03-13 09:02:59.667 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-13 09:02:59.685 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-13 09:02:59.697 PM] info: Server is running at http://localhost:3000 | Mode: development
