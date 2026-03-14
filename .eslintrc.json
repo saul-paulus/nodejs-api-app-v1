@@ -10,12 +10,61 @@
   "parserOptions": {
     "ecmaVersion": "latest"
   },
-  "ignorePatterns": ["src/generated/"],
+  "ignorePatterns": [
+    "src/generated/"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "tests/**/*.test.js"
+      ],
+      "env": {
+        "jest": true
+      }
+    }
+  ],
   "rules": {
     "no-console": "off",
     "import/extensions": "off",
     "class-methods-use-this": "off",
     "import/prefer-default-export": "off",
-    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "import/no-unresolved": [
+      "error",
+      {
+        "ignore": [
+          "^@/"
+        ]
+      }
+    ],
+    "import/no-extraneous-dependencies": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "semi": true,
+        "tabWidth": 2,
+        "printWidth": 300
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": [
+          "."
+        ],
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".json"
+        ]
+      }
+    }
   }
 }

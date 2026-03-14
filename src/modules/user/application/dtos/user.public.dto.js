@@ -7,4 +7,6 @@
 export const userPublicSelect = {
   username: true,
   id_personal: true,
+  codeuker: true,
+  id_wewenang: true,
 };

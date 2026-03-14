@@ -1,12 +1,9 @@
 import bcrypt from 'bcrypt';
-import validated from '../../../../core/utils/validation.js';
-import { userRegistrasiValidation } from '../../infrastructure/validation/user.validation.js';
 import ApiError from '../../../../core/exceptions/api-error.js';
 
 export default ({ userRepository }) => {
   const userRegister = async (request) => {
-    const userValidated = validated(userRegistrasiValidation, request);
-    const { id_personal: idPersonal } = userValidated;
+    const { id_personal: idPersonal } = request;
 
     const user = await userRepository.findByIdPersonal(idPersonal);
 
@@ -14,21 +11,25 @@ export default ({ userRepository }) => {
       throw new ApiError(400, 'Id Personal has been registered on system');
     }
 
-    const passwordHash = await bcrypt.hash(userValidated.password, 9);
+    const passwordHash = await bcrypt.hash(request.password, 9);
 
     return userRepository.createUser({
-      ...userValidated,
+      ...request,
       password: passwordHash,
     });
   };
 
-  const getUsers = async () => {
-    const users = await userRepository.getUsers();
+  const getUsers = async ({ page = 1, limit = 10 } = {}) => {
+    const skip = (page - 1) * limit;
+    const [users, total] = await Promise.all([userRepository.getUsers({ skip, take: limit }), userRepository.countAll()]);
 
-    return users ?? [];
+    return {
+      users: users ?? [],
+      total,
+    };
   };
 
-  const getUser = async (idPersonal) => {
+  const getUserByIdPersonal = async (idPersonal) => {
     const user = await userRepository.findByIdPersonalWithSelect(idPersonal);
 
     if (!user) {
@@ -38,9 +39,31 @@ export default ({ userRepository }) => {
     return user;
   };
 
+  const deleteUser = async (id) => {
+    const user = await userRepository.findId(id);
+
+    if (!user) {
+      throw new ApiError(404, 'User not found');
+    }
+
+    return userRepository.deleteUser(id);
+  };
+
+  const updateUser = async (id, data) => {
+    const user = await userRepository.findId(id);
+
+    if (!user) {
+      throw new ApiError(404, 'User not found');
+    }
+
+    return userRepository.updateUser(id, data);
+  };
+
   return {
     userRegister,
     getUsers,
-    getUser,
+    getUserByIdPersonal,
+    deleteUser,
+    updateUser,
   };
 };

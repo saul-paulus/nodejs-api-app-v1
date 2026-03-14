@@ -8,4 +8,10 @@ const userRegistrasiValidation = Joi.object({
   id_wewenang: Joi.number().integer().required(),
 });
 
-export { userRegistrasiValidation };
+const userUpdateValidation = Joi.object({
+  username: Joi.string().max(255).required(),
+  codeuker: Joi.string().max(255).required(),
+  id_wewenang: Joi.number().integer().required(),
+});
+
+export { userRegistrasiValidation, userUpdateValidation };

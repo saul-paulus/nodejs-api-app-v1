@@ -12,12 +12,17 @@
         "prisma:schema:build": "node scripts/prisma-merge-schema.mjs",
         "prisma:generate": "npm run prisma:schema:build && prisma generate",
         "prisma:migrate": "npm run prisma:schema:build && prisma migrate dev",
-        "prisma:studio": "npm run prisma:schema:build && prisma studio"
+        "prisma:studio": "npm run prisma:schema:build && prisma studio",
+        "postinstall": "rm -rf node_modules/@ && ln -s ../src node_modules/@"
     },
     "jest": {
         "transform": {
             "^.+\\.[t|j]sx?$": "babel-jest"
-        }
+        },
+        "moduleNameMapper": {
+            "^@/(.*)$": "<rootDir>/src/$1"
+        },
+        "testEnvironment": "node"
     },
     "keywords": [
         "api",
@@ -48,14 +53,17 @@
         "@types/express": "^5.0.6",
         "@types/jest": "^30.0.0",
         "@types/supertest": "^7.2.0",
+        "babel-jest": "^30.3.0",
         "eslint": "^8.57.1",
         "eslint-config-airbnb-base": "^15.0.0",
         "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-import": "^2.32.0",
         "eslint-plugin-prettier": "^5.5.5",
         "globals": "^17.4.0",
+        "jest": "^30.3.0",
         "nodemon": "^3.1.14",
         "prettier": "^3.8.1",
-        "prisma": "^6.19.2"
+        "prisma": "^6.19.2",
+        "supertest": "^7.2.2"
     }
 }

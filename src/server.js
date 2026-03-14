@@ -39,17 +39,13 @@ const startServer = async () => {
     process.on('SIGINT', shutdown);
 
     process.on('uncaughtException', async (err) => {
-      logger.error(
-        `UNCAUGHT EXCEPTION! 💥 Shutting down...\n${err.name}: ${err.message}\n${err.stack}`,
-      );
+      logger.error(`UNCAUGHT EXCEPTION! 💥 Shutting down...\n${err.name}: ${err.message}\n${err.stack}`);
       await disconnectDB();
       process.exit(1);
     });
 
     process.on('unhandledRejection', async (err) => {
-      logger.error(
-        `UNHANDLED REJECTION! 💥 Shutting down...\n${err.name}: ${err.message}\n${err.stack}`,
-      );
+      logger.error(`UNHANDLED REJECTION! 💥 Shutting down...\n${err.name}: ${err.message}\n${err.stack}`);
       server.close(async () => {
         await disconnectDB();
         process.exit(1);

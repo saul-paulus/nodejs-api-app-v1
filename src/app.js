@@ -3,7 +3,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import { StatusCodes } from 'http-status-codes';
 import swaggerUi from 'swagger-ui-express';
-import { errorHandler } from './core/exceptions/error-handler.js';
+import errorMiddleware from './core/middlewares/error.middleware.js';
 import ApiError from './core/exceptions/api-error.js';
 import swaggerSpec from './swagger.js';
 /**
@@ -39,12 +39,13 @@ export const createApp = (container) => {
 
   // Daftarkan route dengan prefix (Contoh V1 API)
   app.use('/api/v1/health', healthRouter);
-  app.use('/api/v1/user', userRouter);
+  app.use('/api/v1/users', userRouter);
 
   // Swagger
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
   app.use('/register', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
   app.use('/all', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+  app.use('/delete', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
   // =====================
   // 404 & ERROR HANDLING
@@ -56,7 +57,7 @@ export const createApp = (container) => {
   });
 
   // Global Error Handler
-  app.use(errorHandler);
+  app.use(errorMiddleware);
 
   return app;
 };

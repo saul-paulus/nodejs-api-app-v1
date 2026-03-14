@@ -261,3 +261,961 @@
 [2026-03-14 06:55:52.413 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
 [2026-03-14 06:55:52.434 PM] info: Database connected successfully using Prisma ORM.
 [2026-03-14 06:55:52.450 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 06:58:33.982 PM] debug: [Prisma Query] duration: 0ms - query: SELECT 1
+[2026-03-14 06:58:33.985 PM] debug: [Prisma Query] duration: 2ms - query: SELECT "public"."User"."id", "public"."User"."username", "public"."User"."id_personal" FROM "public"."User" WHERE ("public"."User"."id_personal" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 06:58:33.987 PM] error: 404 - User not found - /api/v1/user/all - GET - ::ffff:127.0.0.1
+[2026-03-14 06:58:33.988 PM] error: Error: User not found
+    at Object.getUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/application/use-cases/user.service.js:35:13)
+    at async UserController.handlerGetUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.controller.js:42:20)
+[2026-03-14 07:01:23.528 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:01:23.565 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:01:23.580 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:01:35.427 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:01:35.444 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:01:35.452 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:02:00.265 PM] debug: [Prisma Query] duration: 0ms - query: SELECT 1
+[2026-03-14 07:02:00.268 PM] debug: [Prisma Query] duration: 1ms - query: SELECT "public"."User"."id", "public"."User"."username", "public"."User"."id_personal" FROM "public"."User" WHERE 1=1 OFFSET $1
+[2026-03-14 07:02:33.347 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:02:33.365 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:02:33.373 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:02:37.996 PM] debug: [Prisma Query] duration: 1ms - query: SELECT "public"."User"."id", "public"."User"."username", "public"."User"."id_personal" FROM "public"."User" WHERE 1=1 OFFSET $1
+[2026-03-14 07:02:59.937 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:02:59.953 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:02:59.961 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:03:17.091 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:03:17.126 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:03:17.137 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:03:27.593 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:03:27.611 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:03:27.619 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:07:23.323 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:07:23.341 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:07:23.350 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:07:44.892 PM] error: 404 - API Route tidak ditemukan - / - GET - ::ffff:127.0.0.1
+[2026-03-14 07:07:44.893 PM] error: Error: API Route tidak ditemukan
+    at file:///srv/http/start-kit-V1/api-expresjs/src/app.js:55:10
+    at Layer.handleRequest (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:342:13)
+    at /srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:297:9
+    at processParams (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:582:12)
+    at next (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:291:5)
+    at read (/srv/http/start-kit-V1/api-expresjs/node_modules/body-parser/lib/read.js:53:5)
+    at urlencodedParser (/srv/http/start-kit-V1/api-expresjs/node_modules/body-parser/lib/types/urlencoded.js:57:5)
+    at Layer.handleRequest (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:342:13)
+[2026-03-14 07:07:45.022 PM] error: 404 - API Route tidak ditemukan - /favicon.ico - GET - ::ffff:127.0.0.1
+[2026-03-14 07:07:45.022 PM] error: Error: API Route tidak ditemukan
+    at file:///srv/http/start-kit-V1/api-expresjs/src/app.js:55:10
+    at Layer.handleRequest (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:342:13)
+    at /srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:297:9
+    at processParams (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:582:12)
+    at next (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:291:5)
+    at read (/srv/http/start-kit-V1/api-expresjs/node_modules/body-parser/lib/read.js:53:5)
+    at urlencodedParser (/srv/http/start-kit-V1/api-expresjs/node_modules/body-parser/lib/types/urlencoded.js:57:5)
+    at Layer.handleRequest (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:342:13)
+[2026-03-14 07:12:28.522 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:12:28.535 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:12:28.541 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:14:21.368 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:14:21.381 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:14:21.387 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:15:35.491 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:15:35.503 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:15:35.509 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:15:55.217 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:15:55.229 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:15:55.235 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:16:04.587 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:16:04.601 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:16:04.608 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:16:09.649 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:16:09.661 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:16:09.667 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:16:23.020 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:16:23.033 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:16:23.038 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:16:47.052 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:16:47.064 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:16:47.070 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:17:38.202 PM] debug: [Prisma Query] duration: 0ms - query: SELECT 1
+[2026-03-14 07:17:38.203 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."username", "public"."User"."id_personal" FROM "public"."User" WHERE 1=1 OFFSET $1
+[2026-03-14 07:20:21.985 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:20:21.998 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:20:22.005 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:20:22.754 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:20:22.766 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:20:22.772 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:20:39.698 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:20:39.711 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:20:39.717 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:20:47.244 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:20:47.257 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:20:47.263 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:22:34.825 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:22:34.840 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:22:34.848 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:22:35.706 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:22:35.720 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:22:46.020 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:22:46.032 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:22:46.038 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:22:46.805 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:22:46.817 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:22:46.823 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:22:59.763 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:22:59.775 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:22:59.781 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:27:38.784 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:27:38.797 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:27:38.803 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:30:19.456 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:30:19.469 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:30:19.474 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:32:14.127 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:32:14.144 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:32:14.156 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:40:44.950 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:40:44.962 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:40:44.968 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:40:57.520 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:40:57.532 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:40:57.538 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:41:01.244 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:41:01.256 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:41:01.262 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:41:07.478 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."username", "public"."User"."id_personal" FROM "public"."User" WHERE 1=1 OFFSET $1
+[2026-03-14 07:43:25.258 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:43:25.278 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:43:25.286 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:43:27.130 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:43:27.143 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:43:27.149 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:45:57.381 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:45:57.397 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:45:57.403 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:46:05.085 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:46:05.098 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:46:05.104 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:48:05.954 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:48:05.967 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:48:05.974 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:48:10.899 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:48:10.915 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:48:10.921 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:48:13.447 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:48:13.461 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:48:13.467 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:50:48.511 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:50:48.525 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:50:48.532 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:52:09.105 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:52:09.118 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:52:09.124 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:52:23.545 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:52:23.556 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:52:23.562 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:53:29.541 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:53:29.560 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:53:29.571 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:53:35.814 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:53:35.834 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:53:35.854 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:54:40.601 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:54:40.636 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:54:40.644 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:54:46.481 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:54:46.494 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:54:46.501 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:55:00.989 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:55:01.001 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:55:01.008 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:55:06.437 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:55:06.449 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:55:06.455 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:55:12.155 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:55:12.168 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:55:12.175 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:55:48.679 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:55:48.692 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:55:48.698 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:56:57.517 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:56:57.530 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:56:57.536 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:57:54.834 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."username", "public"."User"."id_personal" FROM "public"."User" WHERE 1=1 OFFSET $1
+[2026-03-14 07:57:57.454 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."username", "public"."User"."id_personal" FROM "public"."User" WHERE 1=1 OFFSET $1
+[2026-03-14 07:57:59.360 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."username", "public"."User"."id_personal" FROM "public"."User" WHERE 1=1 OFFSET $1
+[2026-03-14 07:58:16.190 PM] debug: [Prisma Query] duration: 0ms - query: SELECT 1
+[2026-03-14 07:58:16.191 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."username", "public"."User"."id_personal" FROM "public"."User" WHERE 1=1 OFFSET $1
+[2026-03-14 07:58:19.316 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."username", "public"."User"."id_personal" FROM "public"."User" WHERE ("public"."User"."id_personal" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 07:58:19.317 PM] error: 404 - User not found - /api/v1/users/tes - GET - ::ffff:127.0.0.1
+[2026-03-14 07:58:19.317 PM] error: Error: User not found
+    at Object.getUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/application/use-cases/user.service.js:32:13)
+    at async UserController.handlerGetUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.controller.js:42:20)
+[2026-03-14 07:58:24.172 PM] error: 404 - API Route tidak ditemukan - /api/v1/user - GET - ::ffff:127.0.0.1
+[2026-03-14 07:58:24.172 PM] error: Error: API Route tidak ditemukan
+    at file:///srv/http/start-kit-V1/api-expresjs/src/app.js:55:10
+    at Layer.handleRequest (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:342:13)
+    at /srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:297:9
+    at processParams (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:582:12)
+    at next (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:291:5)
+    at read (/srv/http/start-kit-V1/api-expresjs/node_modules/body-parser/lib/read.js:53:5)
+    at urlencodedParser (/srv/http/start-kit-V1/api-expresjs/node_modules/body-parser/lib/types/urlencoded.js:57:5)
+    at Layer.handleRequest (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:342:13)
+[2026-03-14 07:58:36.219 PM] debug: [Prisma Query] duration: 0ms - query: SELECT 1
+[2026-03-14 07:58:36.219 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."username", "public"."User"."id_personal" FROM "public"."User" WHERE 1=1 OFFSET $1
+[2026-03-14 07:59:14.269 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:59:14.282 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:59:14.288 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:59:34.970 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:59:34.983 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:59:34.989 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 07:59:48.022 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 07:59:48.036 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 07:59:48.042 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:00:04.575 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:00:04.588 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:00:04.595 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:00:21.785 PM] debug: [Prisma Query] duration: 0ms - query: SELECT 1
+[2026-03-14 08:00:21.785 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."username", "public"."User"."id_personal" FROM "public"."User" WHERE 1=1 OFFSET $1
+[2026-03-14 08:02:22.523 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:02:22.538 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:02:22.544 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:02:26.907 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."username", "public"."User"."id_personal" FROM "public"."User" WHERE 1=1 OFFSET $1
+[2026-03-14 08:02:53.899 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:02:53.925 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:02:53.943 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:03:09.414 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:03:09.426 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:03:09.432 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:09:52.864 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:09:52.876 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:09:52.882 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:10:05.279 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:10:05.291 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:10:05.297 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:10:41.585 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:10:41.596 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:10:41.602 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:11:27.624 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:11:27.636 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:11:27.642 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:11:55.705 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:11:55.717 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:11:55.723 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:13:30.339 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:13:30.352 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:13:30.358 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:14:22.449 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:14:22.461 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:14:22.467 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:14:59.590 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:14:59.604 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:14:59.609 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:29:04.055 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:29:04.068 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:29:04.074 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:29:10.546 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:29:10.567 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:29:10.574 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:30:55.656 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:30:55.669 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:30:55.675 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:31:00.541 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:31:00.554 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:31:00.561 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:31:48.698 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:31:48.710 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:31:48.717 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:32:37.231 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:32:37.243 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:32:37.249 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:33:16.440 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:33:16.460 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:33:16.466 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:34:34.676 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:34:34.689 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:34:34.695 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:37:18.995 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:37:19.008 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:37:19.014 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:37:30.999 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:37:31.011 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:37:31.017 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:38:36.401 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:38:36.414 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:38:36.420 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:39:13.569 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:39:13.582 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:39:13.588 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:39:18.970 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."username", "public"."User"."id_personal" FROM "public"."User" WHERE 1=1 OFFSET $1
+[2026-03-14 08:42:08.671 PM] debug: [Prisma Query] duration: 0ms - query: SELECT 1
+[2026-03-14 08:42:08.672 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."id_personal", "public"."User"."username", "public"."User"."password", "public"."User"."codeuker", "public"."User"."id_wewenang", "public"."User"."created_at", "public"."User"."updated_at" FROM "public"."User" WHERE ("public"."User"."id_personal" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 08:42:08.730 PM] debug: [Prisma Query] duration: 3ms - query: INSERT INTO "public"."User" ("id_personal","username","password","codeuker","id_wewenang","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "public"."User"."id", "public"."User"."username", "public"."User"."id_personal"
+[2026-03-14 08:42:35.394 PM] debug: [Prisma Query] duration: 0ms - query: SELECT 1
+[2026-03-14 08:42:35.394 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."id_personal", "public"."User"."username", "public"."User"."password", "public"."User"."codeuker", "public"."User"."id_wewenang", "public"."User"."created_at", "public"."User"."updated_at" FROM "public"."User" WHERE ("public"."User"."id_personal" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 08:42:35.395 PM] error: 400 - Id Personal has been registered on system - /api/v1/users - POST - ::ffff:127.0.0.1
+[2026-03-14 08:42:35.395 PM] error: Error: Id Personal has been registered on system
+    at Object.userRegister (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/application/use-cases/user.service.js:11:13)
+    at async UserController.handlerCreateUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.controller.js:11:22)
+[2026-03-14 08:43:00.631 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:43:00.643 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:43:00.650 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:43:02.678 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:43:02.691 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:43:02.697 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:43:04.139 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:43:04.153 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:43:04.159 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:44:00.769 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:44:00.782 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:44:00.788 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:44:03.190 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:44:03.202 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:44:03.208 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:44:07.944 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:44:07.956 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:44:07.962 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:48:32.283 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:48:32.303 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:48:32.310 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:48:41.994 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:48:42.006 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:48:42.012 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:49:18.146 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:49:18.159 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:49:18.164 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:50:56.945 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:50:56.957 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:50:56.963 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:53:36.005 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:53:36.017 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:53:36.024 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:53:39.666 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:53:39.679 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:53:39.686 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:53:50.074 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:53:50.087 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:53:50.093 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:53:55.187 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:53:55.200 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:53:55.206 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:53:59.555 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:53:59.567 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:53:59.572 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:55:58.625 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:55:58.638 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:55:58.644 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:56:01.039 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:56:01.052 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:56:01.059 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:56:42.712 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:56:42.981 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:56:42.993 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:56:42.999 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:56:45.145 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:56:45.157 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:56:45.163 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:56:47.645 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:56:47.657 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:56:47.663 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:57:17.210 PM] debug: [Prisma Query] duration: 0ms - query: SELECT 1
+[2026-03-14 08:57:17.212 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."id_personal", "public"."User"."username", "public"."User"."password", "public"."User"."codeuker", "public"."User"."id_wewenang", "public"."User"."created_at", "public"."User"."updated_at" FROM "public"."User" WHERE ("public"."User"."id_personal" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 08:57:17.213 PM] error: 400 - Id Personal has been registered on system - /api/v1/users - POST - ::ffff:127.0.0.1
+[2026-03-14 08:57:17.214 PM] error: Error: Id Personal has been registered on system
+    at Object.userRegister (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/application/use-cases/user.service.js:11:13)
+    at async UserController.handlerCreateUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.controller.js:11:22)
+[2026-03-14 08:57:23.773 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:57:23.785 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:57:23.791 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:57:53.130 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:57:53.143 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:57:53.148 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:59:01.225 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:59:01.246 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:59:01.255 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 08:59:05.121 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."id_personal", "public"."User"."username", "public"."User"."password", "public"."User"."codeuker", "public"."User"."id_wewenang", "public"."User"."created_at", "public"."User"."updated_at" FROM "public"."User" WHERE ("public"."User"."id_personal" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 08:59:05.123 PM] error: 400 - Id Personal has been registered on system - /api/v1/users - POST - ::ffff:127.0.0.1
+[2026-03-14 08:59:05.124 PM] error: Error: Id Personal has been registered on system
+    at Object.userRegister (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/application/use-cases/user.service.js:11:13)
+    at async UserController.handlerCreateUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.controller.js:11:22)
+[2026-03-14 08:59:27.182 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 08:59:27.195 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 08:59:27.201 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:01:50.878 PM] debug: [Prisma Query] duration: 0ms - query: SELECT 1
+[2026-03-14 09:01:50.879 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."id_personal", "public"."User"."username", "public"."User"."password", "public"."User"."codeuker", "public"."User"."id_wewenang", "public"."User"."created_at", "public"."User"."updated_at" FROM "public"."User" WHERE ("public"."User"."id_personal" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 09:01:50.907 PM] debug: [Prisma Query] duration: 1ms - query: INSERT INTO "public"."User" ("id_personal","username","password","codeuker","id_wewenang","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "public"."User"."id", "public"."User"."username", "public"."User"."id_personal"
+[2026-03-14 09:02:19.933 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:02:19.946 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:02:19.952 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:02:22.303 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."id_personal", "public"."User"."username", "public"."User"."password", "public"."User"."codeuker", "public"."User"."id_wewenang", "public"."User"."created_at", "public"."User"."updated_at" FROM "public"."User" WHERE ("public"."User"."id_personal" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 09:02:22.304 PM] error: 400 - Id Personal has been registered on system - /api/v1/users - POST - ::ffff:127.0.0.1
+[2026-03-14 09:02:22.305 PM] error: Error: Id Personal has been registered on system
+    at Object.userRegister (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/application/use-cases/user.service.js:11:13)
+    at async UserController.handlerCreateUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.controller.js:11:22)
+[2026-03-14 09:02:32.728 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."id_personal", "public"."User"."username", "public"."User"."password", "public"."User"."codeuker", "public"."User"."id_wewenang", "public"."User"."created_at", "public"."User"."updated_at" FROM "public"."User" WHERE ("public"."User"."id_personal" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 09:02:32.758 PM] debug: [Prisma Query] duration: 2ms - query: INSERT INTO "public"."User" ("id_personal","username","password","codeuker","id_wewenang","created_at","updated_at") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "public"."User"."id", "public"."User"."username", "public"."User"."id_personal", "public"."User"."codeuker", "public"."User"."id_wewenang"
+[2026-03-14 09:02:59.061 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:02:59.073 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:02:59.079 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:03:37.053 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:03:37.064 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:03:37.071 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:04:01.269 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:04:01.282 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:04:01.288 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:04:13.071 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:04:13.085 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:04:13.091 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:04:22.961 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:04:22.973 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:04:22.979 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:05:28.316 PM] error: 500 - userController.handlerGetUser is not a function - /api/v1/users/007100 - GET - ::ffff:127.0.0.1
+[2026-03-14 09:05:28.317 PM] error: TypeError: userController.handlerGetUser is not a function
+    at file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.routes.js:15:65
+    at Layer.handleRequest (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/layer.js:152:17)
+    at next (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/route.js:117:3)
+    at handle (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/layer.js:152:17)
+    at /srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:295:15
+    at param (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:600:14)
+    at param (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:610:14)
+    at processParams (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:664:3)
+[2026-03-14 09:05:49.867 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:05:49.879 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:05:49.886 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:06:00.260 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:06:00.272 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:06:00.278 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:06:01.464 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:06:01.477 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:06:01.483 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:06:07.286 PM] debug: [Prisma Query] duration: 1ms - query: SELECT "public"."User"."id", "public"."User"."username", "public"."User"."id_personal", "public"."User"."codeuker", "public"."User"."id_wewenang" FROM "public"."User" WHERE ("public"."User"."id_personal" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 09:06:07.288 PM] error: 404 - User not found - /api/v1/users/007100 - GET - ::ffff:127.0.0.1
+[2026-03-14 09:06:07.288 PM] error: Error: User not found
+    at Object.getUserByIdPersonal (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/application/use-cases/user.service.js:32:13)
+    at async UserController.handlerGetUserByIdPersonal (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.controller.js:42:20)
+[2026-03-14 09:07:17.095 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:07:17.112 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:07:17.119 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:07:32.789 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:07:32.804 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:07:32.811 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:07:57.724 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:07:57.738 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:07:57.745 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:08:27.593 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:08:27.606 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:08:27.613 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:08:35.240 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:08:35.253 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:08:35.259 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:08:45.502 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:08:45.514 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:08:45.519 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:08:50.444 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:08:50.455 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:08:50.461 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:08:56.320 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:08:56.333 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:08:56.340 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:08:58.412 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:08:58.425 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:08:58.431 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:09:00.732 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:09:00.747 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:09:00.753 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:17:33.004 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:17:33.017 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:17:33.023 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:31:27.318 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:31:27.331 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:31:27.339 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:31:33.107 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:31:33.119 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:31:33.125 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:31:36.354 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:31:36.367 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:31:36.373 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:34:41.956 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:34:41.969 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:34:41.974 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:34:52.346 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."username", "public"."User"."id_personal", "public"."User"."codeuker", "public"."User"."id_wewenang" FROM "public"."User" WHERE ("public"."User"."id_personal" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 09:34:52.347 PM] error: 404 - User not found - /api/v1/users/007100 - GET - ::ffff:127.0.0.1
+[2026-03-14 09:34:52.347 PM] error: Error: User not found
+    at Object.getUserByIdPersonal (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/application/use-cases/user.service.js:32:13)
+    at async UserController.handlerGetUserByIdPersonal (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.controller.js:32:20)
+[2026-03-14 09:34:54.798 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."username", "public"."User"."id_personal", "public"."User"."codeuker", "public"."User"."id_wewenang" FROM "public"."User" WHERE ("public"."User"."id_personal" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 09:34:54.798 PM] error: 404 - User not found - /api/v1/users/007100 - GET - ::ffff:127.0.0.1
+[2026-03-14 09:34:54.799 PM] error: Error: User not found
+    at Object.getUserByIdPersonal (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/application/use-cases/user.service.js:32:13)
+    at async UserController.handlerGetUserByIdPersonal (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.controller.js:32:20)
+[2026-03-14 09:35:21.252 PM] debug: [Prisma Query] duration: 0ms - query: SELECT 1
+[2026-03-14 09:35:21.252 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."username", "public"."User"."id_personal", "public"."User"."codeuker", "public"."User"."id_wewenang" FROM "public"."User" WHERE ("public"."User"."id_personal" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 09:35:35.491 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."username", "public"."User"."id_personal", "public"."User"."codeuker", "public"."User"."id_wewenang" FROM "public"."User" WHERE 1=1 OFFSET $1
+[2026-03-14 09:36:25.166 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:36:25.178 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:36:25.184 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:37:44.995 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:37:45.008 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:37:45.014 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:38:15.678 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:38:15.690 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:38:15.696 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:38:16.469 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:38:16.482 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:38:16.488 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:38:18.036 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:38:18.049 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:38:18.055 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:38:21.710 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:38:21.723 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:38:21.729 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:38:22.644 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:38:22.658 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:38:22.665 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:38:38.780 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:38:38.794 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:38:38.803 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:38:39.567 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:38:39.581 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:38:39.587 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:39:13.519 PM] debug: [Prisma Query] duration: 0ms - query: SELECT 1
+[2026-03-14 09:39:13.520 PM] debug: [Prisma Query] duration: 1ms - query: SELECT "public"."User"."id", "public"."User"."username", "public"."User"."id_personal", "public"."User"."codeuker", "public"."User"."id_wewenang" FROM "public"."User" WHERE 1=1 ORDER BY "public"."User"."id" ASC LIMIT $1 OFFSET $2
+[2026-03-14 09:39:13.522 PM] debug: [Prisma Query] duration: 1ms - query: SELECT COUNT(*) AS "_count$_all" FROM (SELECT "public"."User"."id" FROM "public"."User" WHERE 1=1 OFFSET $1) AS "sub"
+[2026-03-14 09:40:00.148 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:40:00.161 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:40:00.167 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:40:09.296 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."username", "public"."User"."id_personal", "public"."User"."codeuker", "public"."User"."id_wewenang" FROM "public"."User" WHERE 1=1 ORDER BY "public"."User"."id" ASC LIMIT $1 OFFSET $2
+[2026-03-14 09:40:09.298 PM] debug: [Prisma Query] duration: 0ms - query: SELECT COUNT(*) AS "_count$_all" FROM (SELECT "public"."User"."id" FROM "public"."User" WHERE 1=1 OFFSET $1) AS "sub"
+[2026-03-14 09:40:16.249 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."id_personal", "public"."User"."username", "public"."User"."password", "public"."User"."codeuker", "public"."User"."id_wewenang", "public"."User"."created_at", "public"."User"."updated_at" FROM "public"."User" WHERE ("public"."User"."id_personal" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 09:40:16.250 PM] error: 400 - Id Personal has been registered on system - /api/v1/users - POST - ::ffff:127.0.0.1
+[2026-03-14 09:40:16.250 PM] error: Error: Id Personal has been registered on system
+    at Object.userRegister (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/application/use-cases/user.service.js:11:13)
+    at async UserController.handlerCreateUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.controller.js:11:22)
+[2026-03-14 09:40:20.546 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."username", "public"."User"."id_personal", "public"."User"."codeuker", "public"."User"."id_wewenang" FROM "public"."User" WHERE ("public"."User"."id_personal" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 09:41:51.467 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:41:51.480 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:41:56.738 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:41:56.750 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:41:56.756 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:42:35.274 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:42:35.286 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:42:35.293 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:43:05.513 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:43:05.525 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:43:05.532 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:43:24.275 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:43:24.287 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:43:24.294 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:44:01.773 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:44:01.785 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:44:01.791 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:44:27.919 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:44:27.931 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:44:27.938 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:44:35.240 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:44:35.252 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:44:35.258 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:44:41.178 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:44:41.190 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:44:41.196 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:45:41.252 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:45:41.264 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:45:41.269 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:48:12.990 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:48:13.003 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:48:13.009 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:48:22.666 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:48:22.678 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:48:22.685 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:48:27.443 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:48:27.456 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:48:27.462 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:48:31.007 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:48:31.020 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:48:31.028 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:48:38.987 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:48:38.999 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:48:39.006 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:49:26.216 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:49:26.230 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:49:26.236 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:49:45.392 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:49:45.405 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:49:45.412 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:50:17.989 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:50:18.001 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:50:18.008 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:50:26.918 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:50:26.931 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:50:26.937 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:51:18.190 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:51:18.203 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:51:18.209 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:53:53.444 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:53:53.457 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:53:53.464 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:54:07.485 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:54:07.497 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:54:07.504 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:56:04.544 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:56:04.556 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:56:04.562 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:56:28.539 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:56:28.552 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:56:28.558 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:56:35.616 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:56:35.628 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:56:35.635 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:57:34.993 PM] debug: [Prisma Query] duration: 0ms - query: SELECT 1
+[2026-03-14 09:57:34.995 PM] error: [Prisma Error] 
+Invalid `prisma.user.findUnique()` invocation:
+
+{
+  where: {
+    id: "1212"
+        ~~~~~~
+  }
+}
+
+Argument `id`: Invalid value provided. Expected Int, provided String.
+[2026-03-14 09:57:34.996 PM] error: 500 - 
+Invalid `prisma.user.findUnique()` invocation:
+
+{
+  where: {
+    id: "1212"
+        ~~~~~~
+  }
+}
+
+Argument `id`: Invalid value provided. Expected Int, provided String. - /api/v1/users/1212 - DELETE - ::ffff:127.0.0.1
+[2026-03-14 09:57:34.997 PM] error: PrismaClientValidationError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+{
+  where: {
+    id: "1212"
+        ~~~~~~
+  }
+}
+
+Argument `id`: Invalid value provided. Expected Int, provided String.
+    at Nn (/srv/http/start-kit-V1/api-expresjs/node_modules/@prisma/client/runtime/library.js:29:1363)
+    at ei.handleRequestError (/srv/http/start-kit-V1/api-expresjs/node_modules/@prisma/client/runtime/library.js:121:6911)
+    at ei.handleAndLogRequestError (/srv/http/start-kit-V1/api-expresjs/node_modules/@prisma/client/runtime/library.js:121:6593)
+    at ei.request (/srv/http/start-kit-V1/api-expresjs/node_modules/@prisma/client/runtime/library.js:121:6300)
+    at async a (/srv/http/start-kit-V1/api-expresjs/node_modules/@prisma/client/runtime/library.js:130:9551)
+    at async Object.deleteUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/application/use-cases/user.service.js:43:18)
+    at async UserController.handlerDeleteUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.controller.js:73:20)
+[2026-03-14 09:58:21.773 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:58:21.785 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:58:25.400 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:58:25.412 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:58:25.418 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:58:42.584 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 09:58:42.596 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 09:58:42.602 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 09:58:44.337 PM] error: [Prisma Error] 
+Invalid `prisma.user.findUnique()` invocation:
+
+{
+  where: {
+    id: "1212"
+        ~~~~~~
+  },
+  select: {
+    username: true,
+    id_personal: true,
+    codeuker: true,
+    id_wewenang: true
+  }
+}
+
+Argument `id`: Invalid value provided. Expected Int, provided String.
+[2026-03-14 09:58:44.339 PM] error: 500 - 
+Invalid `prisma.user.findUnique()` invocation:
+
+{
+  where: {
+    id: "1212"
+        ~~~~~~
+  },
+  select: {
+    username: true,
+    id_personal: true,
+    codeuker: true,
+    id_wewenang: true
+  }
+}
+
+Argument `id`: Invalid value provided. Expected Int, provided String. - /api/v1/users/1212 - DELETE - ::ffff:127.0.0.1
+[2026-03-14 09:58:44.339 PM] error: PrismaClientValidationError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+{
+  where: {
+    id: "1212"
+        ~~~~~~
+  },
+  select: {
+    username: true,
+    id_personal: true,
+    codeuker: true,
+    id_wewenang: true
+  }
+}
+
+Argument `id`: Invalid value provided. Expected Int, provided String.
+    at Nn (/srv/http/start-kit-V1/api-expresjs/node_modules/@prisma/client/runtime/library.js:29:1363)
+    at ei.handleRequestError (/srv/http/start-kit-V1/api-expresjs/node_modules/@prisma/client/runtime/library.js:121:6911)
+    at ei.handleAndLogRequestError (/srv/http/start-kit-V1/api-expresjs/node_modules/@prisma/client/runtime/library.js:121:6593)
+    at ei.request (/srv/http/start-kit-V1/api-expresjs/node_modules/@prisma/client/runtime/library.js:121:6300)
+    at async a (/srv/http/start-kit-V1/api-expresjs/node_modules/@prisma/client/runtime/library.js:130:9551)
+    at async Object.deleteUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/application/use-cases/user.service.js:43:18)
+    at async UserController.handlerDeleteUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.controller.js:73:20)
+[2026-03-14 10:00:37.114 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:00:37.127 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:00:37.133 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:00:39.863 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:00:39.876 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:00:39.882 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:00:41.600 PM] debug: [Prisma Query] duration: 1ms - query: SELECT "public"."User"."id", "public"."User"."id_personal", "public"."User"."username", "public"."User"."password", "public"."User"."codeuker", "public"."User"."id_wewenang", "public"."User"."created_at", "public"."User"."updated_at" FROM "public"."User" WHERE ("public"."User"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 10:00:41.601 PM] error: 404 - User not found - /api/v1/users/1212 - DELETE - ::ffff:127.0.0.1
+[2026-03-14 10:00:41.602 PM] error: Error: User not found
+    at Object.deleteUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/application/use-cases/user.service.js:46:13)
+    at async UserController.handlerDeleteUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.controller.js:73:20)
+[2026-03-14 10:00:51.027 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."id_personal", "public"."User"."username", "public"."User"."password", "public"."User"."codeuker", "public"."User"."id_wewenang", "public"."User"."created_at", "public"."User"."updated_at" FROM "public"."User" WHERE ("public"."User"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 10:00:51.028 PM] error: 404 - User not found - /api/v1/users/1212 - DELETE - ::ffff:127.0.0.1
+[2026-03-14 10:00:51.028 PM] error: Error: User not found
+    at Object.deleteUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/application/use-cases/user.service.js:46:13)
+    at async UserController.handlerDeleteUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.controller.js:73:20)
+[2026-03-14 10:01:01.599 PM] debug: [Prisma Query] duration: 0ms - query: SELECT 1
+[2026-03-14 10:01:01.600 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."id_personal", "public"."User"."username", "public"."User"."password", "public"."User"."codeuker", "public"."User"."id_wewenang", "public"."User"."created_at", "public"."User"."updated_at" FROM "public"."User" WHERE ("public"."User"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 10:01:01.600 PM] error: 404 - User not found - /api/v1/users/12345672 - DELETE - ::ffff:127.0.0.1
+[2026-03-14 10:01:01.600 PM] error: Error: User not found
+    at Object.deleteUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/application/use-cases/user.service.js:46:13)
+    at async UserController.handlerDeleteUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.controller.js:73:20)
+[2026-03-14 10:01:04.963 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."id_personal", "public"."User"."username", "public"."User"."password", "public"."User"."codeuker", "public"."User"."id_wewenang", "public"."User"."created_at", "public"."User"."updated_at" FROM "public"."User" WHERE ("public"."User"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 10:01:04.963 PM] error: 404 - User not found - /api/v1/users/12345672 - DELETE - ::ffff:127.0.0.1
+[2026-03-14 10:01:04.963 PM] error: Error: User not found
+    at Object.deleteUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/application/use-cases/user.service.js:46:13)
+    at async UserController.handlerDeleteUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.controller.js:73:20)
+[2026-03-14 10:01:15.310 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."id_personal", "public"."User"."username", "public"."User"."password", "public"."User"."codeuker", "public"."User"."id_wewenang", "public"."User"."created_at", "public"."User"."updated_at" FROM "public"."User" WHERE ("public"."User"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 10:01:15.313 PM] error: [Prisma Error] 
+Invalid `prisma.user.delete()` invocation:
+
+{
+  where: {
+    id: "3"
+        ~~~
+  }
+}
+
+Argument `id`: Invalid value provided. Expected Int, provided String.
+[2026-03-14 10:01:15.314 PM] error: 500 - 
+Invalid `prisma.user.delete()` invocation:
+
+{
+  where: {
+    id: "3"
+        ~~~
+  }
+}
+
+Argument `id`: Invalid value provided. Expected Int, provided String. - /api/v1/users/3 - DELETE - ::ffff:127.0.0.1
+[2026-03-14 10:01:15.314 PM] error: PrismaClientValidationError: 
+Invalid `prisma.user.delete()` invocation:
+
+{
+  where: {
+    id: "3"
+        ~~~
+  }
+}
+
+Argument `id`: Invalid value provided. Expected Int, provided String.
+    at Nn (/srv/http/start-kit-V1/api-expresjs/node_modules/@prisma/client/runtime/library.js:29:1363)
+    at ei.handleRequestError (/srv/http/start-kit-V1/api-expresjs/node_modules/@prisma/client/runtime/library.js:121:6911)
+    at ei.handleAndLogRequestError (/srv/http/start-kit-V1/api-expresjs/node_modules/@prisma/client/runtime/library.js:121:6593)
+    at ei.request (/srv/http/start-kit-V1/api-expresjs/node_modules/@prisma/client/runtime/library.js:121:6300)
+    at async a (/srv/http/start-kit-V1/api-expresjs/node_modules/@prisma/client/runtime/library.js:130:9551)
+    at async UserController.handlerDeleteUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.controller.js:73:20)
+[2026-03-14 10:01:41.189 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:01:41.202 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:01:41.209 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:01:59.011 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:01:59.023 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:01:59.029 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:02:01.518 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."id_personal", "public"."User"."username", "public"."User"."password", "public"."User"."codeuker", "public"."User"."id_wewenang", "public"."User"."created_at", "public"."User"."updated_at" FROM "public"."User" WHERE ("public"."User"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 10:02:01.537 PM] debug: [Prisma Query] duration: 17ms - query: DELETE FROM "public"."User" WHERE ("public"."User"."id" = $1 AND 1=1) RETURNING "public"."User"."id", "public"."User"."id_personal", "public"."User"."username", "public"."User"."password", "public"."User"."codeuker", "public"."User"."id_wewenang", "public"."User"."created_at", "public"."User"."updated_at"
+[2026-03-14 10:02:13.016 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."id_personal", "public"."User"."username", "public"."User"."password", "public"."User"."codeuker", "public"."User"."id_wewenang", "public"."User"."created_at", "public"."User"."updated_at" FROM "public"."User" WHERE ("public"."User"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 10:02:13.017 PM] error: 404 - User not found - /api/v1/users/121 - DELETE - ::ffff:127.0.0.1
+[2026-03-14 10:02:13.017 PM] error: Error: User not found
+    at Object.deleteUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/application/use-cases/user.service.js:46:13)
+    at async UserController.handlerDeleteUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.controller.js:73:20)
+[2026-03-14 10:02:16.419 PM] debug: [Prisma Query] duration: 0ms - query: SELECT 1
+[2026-03-14 10:02:16.419 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."id_personal", "public"."User"."username", "public"."User"."password", "public"."User"."codeuker", "public"."User"."id_wewenang", "public"."User"."created_at", "public"."User"."updated_at" FROM "public"."User" WHERE ("public"."User"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 10:02:16.420 PM] error: 404 - User not found - /api/v1/users/4 - DELETE - ::ffff:127.0.0.1
+[2026-03-14 10:02:16.420 PM] error: Error: User not found
+    at Object.deleteUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/application/use-cases/user.service.js:46:13)
+    at async UserController.handlerDeleteUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.controller.js:73:20)
+[2026-03-14 10:04:41.368 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:04:41.380 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:04:41.386 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:04:58.466 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:04:58.478 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:04:58.484 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:05:11.082 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:05:11.093 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:05:11.100 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:05:15.691 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:05:15.704 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:05:15.710 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:05:20.519 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:05:20.531 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:05:20.537 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:05:39.268 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:05:39.280 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:05:40.633 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:05:40.646 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:05:40.653 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:05:50.611 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:05:50.623 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:05:50.628 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:06:42.574 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:06:42.586 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:06:42.592 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:06:43.477 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:06:43.489 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:06:43.495 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:07:14.844 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:07:14.856 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:07:14.862 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:07:21.785 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:07:21.797 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:07:21.803 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:08:39.157 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:08:39.170 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:08:39.177 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:08:58.450 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:08:58.462 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:08:58.469 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:09:40.505 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:09:40.518 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:09:40.524 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:10:02.321 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:10:02.333 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:10:02.339 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:10:03.094 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:10:03.107 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:10:03.114 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:10:03.704 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:10:03.716 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:10:03.723 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:10:46.039 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:10:46.051 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:10:46.057 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:11:23.257 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:11:23.269 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:11:23.276 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:11:29.654 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:11:29.667 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:11:29.673 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:11:38.633 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:11:38.645 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:11:38.651 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:12:14.910 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:12:14.923 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:12:14.929 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:13:33.941 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:13:33.953 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:14:12.378 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:14:12.390 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:14:12.396 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:15:40.844 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:15:40.856 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:15:40.862 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:16:38.419 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:16:38.431 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:16:38.437 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:16:51.013 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:16:51.026 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:16:51.267 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:16:51.279 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:16:51.285 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:17:39.694 PM] debug: [Prisma Query] duration: 0ms - query: SELECT 1
+[2026-03-14 10:17:39.695 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."id_personal", "public"."User"."username", "public"."User"."password", "public"."User"."codeuker", "public"."User"."id_wewenang", "public"."User"."created_at", "public"."User"."updated_at" FROM "public"."User" WHERE ("public"."User"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 10:17:39.696 PM] error: 404 - User not found - /api/v1/users/3 - PUT - ::ffff:127.0.0.1
+[2026-03-14 10:17:39.697 PM] error: Error: User not found
+    at Object.updateUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/application/use-cases/user.service.js:56:13)
+    at async UserController.handlerUpdateUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.controller.js:85:20)
+[2026-03-14 10:18:26.025 PM] error: 400 - Validation error - /api/v1/users/1 - PUT - ::ffff:127.0.0.1
+[2026-03-14 10:18:26.025 PM] error: Error: Validation error
+    at validated (file:///srv/http/start-kit-V1/api-expresjs/src/core/utils/validation.js:17:11)
+    at file:///srv/http/start-kit-V1/api-expresjs/src/core/middlewares/validate.middleware.js:14:29
+    at Layer.handleRequest (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/layer.js:152:17)
+    at next (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/route.js:117:3)
+    at handle (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/layer.js:152:17)
+    at /srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:295:15
+    at param (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:600:14)
+    at param (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:610:14)
+[2026-03-14 10:20:27.780 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:20:27.792 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:20:27.798 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:20:28.858 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:20:28.872 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:20:28.878 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:25:42.435 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:25:42.448 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:25:42.455 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:25:44.400 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:25:44.413 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:25:44.419 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 10:26:12.584 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 10:26:12.597 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 10:26:12.603 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 11:25:10.562 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 11:25:10.587 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 11:25:10.597 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 11:25:33.514 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 11:25:33.532 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 11:25:33.542 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 11:25:48.146 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 11:25:48.164 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 11:25:48.176 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 11:25:50.946 PM] error: 400 - Validation error - /api/v1/users/1 - PUT - ::ffff:127.0.0.1
+[2026-03-14 11:25:50.946 PM] error: Error: Validation error
+    at validated (file:///srv/http/start-kit-V1/api-expresjs/src/core/utils/validation.js:17:11)
+    at file:///srv/http/start-kit-V1/api-expresjs/src/core/middlewares/validate.middleware.js:14:29
+    at Layer.handleRequest (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/layer.js:152:17)
+    at next (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/route.js:117:3)
+    at handle (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/srv/http/start-kit-V1/api-expresjs/node_modules/router/lib/layer.js:152:17)
+    at /srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:295:15
+    at param (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:600:14)
+    at param (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:610:14)
+[2026-03-14 11:26:40.644 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 11:26:40.667 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 11:26:40.686 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 11:26:43.003 PM] debug: [Prisma Query] duration: 1ms - query: SELECT "public"."User"."id", "public"."User"."id_personal", "public"."User"."username", "public"."User"."password", "public"."User"."codeuker", "public"."User"."id_wewenang", "public"."User"."created_at", "public"."User"."updated_at" FROM "public"."User" WHERE ("public"."User"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 11:26:43.009 PM] debug: [Prisma Query] duration: 1ms - query: UPDATE "public"."User" SET "username" = $1, "codeuker" = $2, "id_wewenang" = $3, "updated_at" = $4 WHERE ("public"."User"."id" = $5 AND 1=1) RETURNING "public"."User"."id", "public"."User"."id_personal", "public"."User"."username", "public"."User"."password", "public"."User"."codeuker", "public"."User"."id_wewenang", "public"."User"."created_at", "public"."User"."updated_at"
+[2026-03-14 11:27:28.443 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 11:27:28.461 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 11:27:28.471 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 11:28:01.816 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 11:28:01.841 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 11:28:01.859 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 11:28:06.319 PM] debug: [Prisma Query] duration: 1ms - query: SELECT "public"."User"."id", "public"."User"."id_personal", "public"."User"."username", "public"."User"."password", "public"."User"."codeuker", "public"."User"."id_wewenang", "public"."User"."created_at", "public"."User"."updated_at" FROM "public"."User" WHERE ("public"."User"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 11:28:06.323 PM] debug: [Prisma Query] duration: 1ms - query: UPDATE "public"."User" SET "username" = $1, "codeuker" = $2, "id_wewenang" = $3, "updated_at" = $4 WHERE ("public"."User"."id" = $5 AND 1=1) RETURNING "public"."User"."id", "public"."User"."username", "public"."User"."id_personal", "public"."User"."codeuker", "public"."User"."id_wewenang"
+[2026-03-14 11:28:11.094 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 11:28:11.111 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 11:28:11.120 PM] info: Server is running at http://localhost:3000 | Mode: development
