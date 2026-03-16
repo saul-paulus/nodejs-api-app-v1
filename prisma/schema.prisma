@@ -14,6 +14,22 @@ datasource db {
   url      = env("DB_URL")
 }
 
+// ---- prisma/schema/permission.prisma ----
+model Permission {
+  id_permission Int @id @default(autoincrement())
+  nm_permission String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+// ---- prisma/schema/role.prisma ----
+model Role {
+  id_role Int @id @default(autoincrement())
+  nm_role  String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
 // ---- prisma/schema/user.prisma ----
 model User {
   id          Int      @id @default(autoincrement())
