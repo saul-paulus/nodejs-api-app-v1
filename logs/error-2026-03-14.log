@@ -362,3 +362,7 @@ TypeError: Cannot read properties of undefined (reading 'bind')
     at /srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:295:15
     at param (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:600:14)
     at param (/srv/http/start-kit-V1/api-expresjs/node_modules/router/index.js:610:14)
+[2026-03-14 11:29:35.766 PM] error: 404 - User not found - /api/v1/users/2 - PUT - ::ffff:127.0.0.1
+[2026-03-14 11:29:35.766 PM] error: Error: User not found
+    at Object.updateUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/application/use-cases/user.service.js:56:13)
+    at async UserController.handlerUpdateUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.controller.js:85:20)

@@ -1219,3 +1219,14 @@ Argument `id`: Invalid value provided. Expected Int, provided String.
 [2026-03-14 11:28:11.094 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
 [2026-03-14 11:28:11.111 PM] info: Database connected successfully using Prisma ORM.
 [2026-03-14 11:28:11.120 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 11:28:42.061 PM] info: [Prisma Info] Starting a postgresql pool with 9 connections.
+[2026-03-14 11:28:42.080 PM] info: Database connected successfully using Prisma ORM.
+[2026-03-14 11:28:42.090 PM] info: Server is running at http://localhost:3000 | Mode: development
+[2026-03-14 11:29:35.762 PM] debug: [Prisma Query] duration: 0ms - query: SELECT 1
+[2026-03-14 11:29:35.763 PM] debug: [Prisma Query] duration: 1ms - query: SELECT "public"."User"."id", "public"."User"."id_personal", "public"."User"."username", "public"."User"."password", "public"."User"."codeuker", "public"."User"."id_wewenang", "public"."User"."created_at", "public"."User"."updated_at" FROM "public"."User" WHERE ("public"."User"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 11:29:35.766 PM] error: 404 - User not found - /api/v1/users/2 - PUT - ::ffff:127.0.0.1
+[2026-03-14 11:29:35.766 PM] error: Error: User not found
+    at Object.updateUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/application/use-cases/user.service.js:56:13)
+    at async UserController.handlerUpdateUser (file:///srv/http/start-kit-V1/api-expresjs/src/modules/user/infrastructure/http/user.controller.js:85:20)
+[2026-03-14 11:29:38.831 PM] debug: [Prisma Query] duration: 0ms - query: SELECT "public"."User"."id", "public"."User"."id_personal", "public"."User"."username", "public"."User"."password", "public"."User"."codeuker", "public"."User"."id_wewenang", "public"."User"."created_at", "public"."User"."updated_at" FROM "public"."User" WHERE ("public"."User"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+[2026-03-14 11:29:38.836 PM] debug: [Prisma Query] duration: 2ms - query: UPDATE "public"."User" SET "username" = $1, "codeuker" = $2, "id_wewenang" = $3, "updated_at" = $4 WHERE ("public"."User"."id" = $5 AND 1=1) RETURNING "public"."User"."id", "public"."User"."username", "public"."User"."id_personal", "public"."User"."codeuker", "public"."User"."id_wewenang"
