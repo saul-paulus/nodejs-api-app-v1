@@ -1,5 +1,5 @@
 import { StatusCodes } from 'http-status-codes';
-import { successResponse } from '@/shared/utils/responseApi.js';
+import { successResponse } from '@/shared/utils/helpers.js';
 
 export default class UserController {
   constructor({ registerUser, getUsers, getUserByIdPersonal, deleteUser, updateUser }) {
@@ -23,32 +23,8 @@ export default class UserController {
     try {
       const page = parseInt(req.query.page, 10) || 1;
       const limit = parseInt(req.query.limit, 10) || 10;
-
       const { users, total } = await this.getUsers.execute({ page, limit });
-
-      const totalPages = Math.ceil(total / limit);
-
-      const meta = { total, page, limit, totalPages };
-
-      const { protocol } = req;
-      const host = req.get('host');
-      const baseUrl = `${protocol}://${host}${req.baseUrl}`;
-
-      const links = [
-        { rel: 'self', href: `${baseUrl}?page=${page}&limit=${limit}` },
-        { rel: 'first', href: `${baseUrl}?page=1&limit=${limit}` },
-        { rel: 'last', href: `${baseUrl}?page=${totalPages || 1}&limit=${limit}` },
-      ];
-
-      if (page < totalPages) {
-        links.push({ rel: 'next', href: `${baseUrl}?page=${page + 1}&limit=${limit}` });
-      }
-
-      if (page > 1) {
-        links.push({ rel: 'prev', href: `${baseUrl}?page=${page - 1}&limit=${limit}` });
-      }
-
-      res.status(StatusCodes.OK).json(successResponse(StatusCodes.OK, 'List of users retrieved successfully', users, meta, links));
+      res.status(StatusCodes.OK).json(successResponse(StatusCodes.OK, 'List of users retrieved successfully', users, { total, page, limit }));
     } catch (error) {
       next(error);
     }
@@ -68,7 +44,7 @@ export default class UserController {
     try {
       const { id } = req.params;
       const user = await this.deleteUser.execute(Number(id));
-      res.status(StatusCodes.OK).json(successResponse(StatusCodes.OK, 'User delete successfully', user));
+      res.status(StatusCodes.OK).json(successResponse(StatusCodes.OK, 'User deleted successfully', user));
     } catch (error) {
       next(error);
     }
@@ -78,7 +54,7 @@ export default class UserController {
     try {
       const { id } = req.params;
       const user = await this.updateUser.execute(Number(id), req.body);
-      res.status(StatusCodes.OK).json(successResponse(StatusCodes.OK, 'User update successfully', user));
+      res.status(StatusCodes.OK).json(successResponse(StatusCodes.OK, 'User updated successfully', user));
     } catch (error) {
       next(error);
     }

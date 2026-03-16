@@ -1,5 +1,5 @@
 import { StatusCodes } from 'http-status-codes';
-import { successResponse } from '@/shared/utils/responseApi.js';
+import { successResponse } from '@/shared/utils/helpers.js';
 
 export default class HealthController {
   constructor({ getHealthStatus }) {

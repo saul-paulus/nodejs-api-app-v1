@@ -1,3 +1,4 @@
+import { jest, describe, it, expect, beforeEach } from '@jest/globals';
 import supertest from 'supertest';
 import { asValue } from 'awilix';
 import { setupDIContainer } from '@/container.js';
@@ -8,9 +9,9 @@ describe('POST /api/v1/users', () => {
   let container;
   let mockUserRepository;
 
-  beforeEach(() => {
+  beforeEach(async () => {
     // Setup container
-    container = setupDIContainer();
+    container = await setupDIContainer();
 
     // Create mock repository
     mockUserRepository = {
@@ -18,9 +19,13 @@ describe('POST /api/v1/users', () => {
       createUser: jest.fn(),
     };
 
-    // Override userRepository in container with mock
+    // Override userRepository and other dependencies in container to prevent resolution failure
     container.register({
       userRepository: asValue(mockUserRepository),
+      getUsers: asValue({ execute: jest.fn() }),
+      getUserByIdPersonal: asValue({ execute: jest.fn() }),
+      deleteUser: asValue({ execute: jest.fn() }),
+      updateUser: asValue({ execute: jest.fn() }),
     });
 
     // Create app with modified container
@@ -33,7 +38,7 @@ describe('POST /api/v1/users', () => {
       id_personal: '1234567890',
       password: 'password123',
       codeuker: 'UKER01',
-      id_wewenang: 1,
+      id_role: 1,
     };
 
     // Mock behaviors
@@ -63,7 +68,7 @@ describe('POST /api/v1/users', () => {
       id_personal: '1234567890',
       password: 'password123',
       codeuker: 'UKER01',
-      id_wewenang: 1,
+      id_role: 1,
     };
 
     // Mock that user already exists

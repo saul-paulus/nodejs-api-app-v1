@@ -1,6 +1,6 @@
 import express from 'express';
-import validate from '@/shared/middlewares/validate.middleware.js';
-import { userRegistrasiValidation, userUpdateValidation } from '../validation/user.validation.js';
+import validate from '@/shared/middleware/validateMiddleware.js';
+import { userRegistrasiValidation, userUpdateValidation } from '../../infrastructure/validation/user.validation.js';
 
 export default ({ userController }) => {
   const router = express.Router();

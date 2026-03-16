@@ -1,4 +1,4 @@
-import { userPublicSelect } from '../../application/dtos/user.public.dto.js';
+import { userPublicSelect } from '@/modules/user/application/dtos/user.public.dto.js';
 
 export default class PrismaUserRepository {
   constructor({ prisma }) {
@@ -6,13 +6,13 @@ export default class PrismaUserRepository {
   }
 
   async findByIdPersonal(idPersonal) {
-    return this.prisma.user.findUnique({
+    return this.prisma.users.findUnique({
       where: { id_personal: idPersonal },
     });
   }
 
   async getUsers({ skip = 0, take = 10 } = {}) {
-    return this.prisma.user.findMany({
+    return this.prisma.users.findMany({
       skip,
       take,
       select: userPublicSelect,
@@ -20,37 +20,37 @@ export default class PrismaUserRepository {
   }
 
   async countAll() {
-    return this.prisma.user.count();
+    return this.prisma.users.count();
   }
 
   async findByIdPersonalWithSelect(idPersonal) {
-    return this.prisma.user.findUnique({
+    return this.prisma.users.findUnique({
       where: { id_personal: idPersonal },
       select: userPublicSelect,
     });
   }
 
   async findId(idUser) {
-    return this.prisma.user.findUnique({
+    return this.prisma.users.findUnique({
       where: { id: idUser },
     });
   }
 
   async createUser(data) {
-    return this.prisma.user.create({
+    return this.prisma.users.create({
       data,
       select: userPublicSelect,
     });
   }
 
   async deleteUser(id) {
-    return this.prisma.user.delete({
+    return this.prisma.users.delete({
       where: { id },
     });
   }
 
   async updateUser(idUser, dataUpdate) {
-    return this.prisma.user.update({
+    return this.prisma.users.update({
       where: {
         id: idUser,
       },

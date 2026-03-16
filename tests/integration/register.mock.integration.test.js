@@ -1,13 +1,14 @@
+import { jest, describe, it, expect, beforeAll } from '@jest/globals';
 import supertest from 'supertest';
-import { createContainer, InjectionMode, asValue, Lifetime } from 'awilix';
+import { createContainer, InjectionMode, asValue, Lifetime, asFunction } from 'awilix';
 import { createApp } from '@/app.js';
 
-// Simple in-memory mock for Prisma 'user' model
+// Simple in-memory mock for Prisma 'users' model
 const createMockPrisma = () => {
   const store = { users: [] };
 
   return {
-    user: {
+    users: {
       async findUnique({ where }) {
         if (where.id_personal) return store.users.find((u) => u.id_personal === where.id_personal) || null;
         if (where.id) return store.users.find((u) => u.id === where.id) || null;
@@ -70,6 +71,16 @@ describe('Integration (mocked prisma): POST /api/v1/users', () => {
       esModules: true,
     });
 
+    // Register aliases as in real container.js
+    container.register({
+      userRepository: asFunction(({ prismaUserRepository }) => prismaUserRepository).scoped(),
+      registerUser: asFunction(({ createUserUseCase }) => createUserUseCase).scoped(),
+      getUsers: asFunction(({ getUsersUseCase }) => getUsersUseCase).scoped(),
+      getUserByIdPersonal: asFunction(({ getUserByIdPersonalUseCase }) => getUserByIdPersonalUseCase).scoped(),
+      deleteUser: asFunction(({ deleteUserUseCase }) => deleteUserUseCase).scoped(),
+      updateUser: asFunction(({ updateUserUseCase }) => updateUserUseCase).scoped(),
+    });
+
     app = createApp(container);
   });
 
@@ -83,6 +94,7 @@ describe('Integration (mocked prisma): POST /api/v1/users', () => {
     };
 
     const res1 = await supertest(app).post('/api/v1/users').send(userData);
+    if (res1.status !== 201) console.error('FAIL res1:', res1.body);
     expect(res1.status).toBe(201);
     expect(res1.body.success).toBe(true);
 

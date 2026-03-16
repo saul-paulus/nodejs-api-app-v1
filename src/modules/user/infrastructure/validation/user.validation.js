@@ -1,17 +1,22 @@
 import Joi from 'joi';
 
-const userRegistrasiValidation = Joi.object({
-  username: Joi.string().max(255).required(),
-  id_personal: Joi.string().max(255).required(),
-  password: Joi.string().max(255).required(),
-  codeuker: Joi.string().max(255).required(),
-  id_role: Joi.number().integer().required(),
-});
+export const userRegistrasiValidation = {
+  body: Joi.object().keys({
+    username: Joi.string().required(),
+    id_personal: Joi.string().required(),
+    password: Joi.string().required(),
+    codeuker: Joi.string().required(),
+    id_role: Joi.number().required(),
+  }),
+};
 
-const userUpdateValidation = Joi.object({
-  username: Joi.string().max(255).required(),
-  codeuker: Joi.string().max(255).required(),
-  id_role: Joi.number().integer().required(),
-});
-
-export { userRegistrasiValidation, userUpdateValidation };
+export const userUpdateValidation = {
+  params: Joi.object().keys({
+    id: Joi.number().required(),
+  }),
+  body: Joi.object().keys({
+    username: Joi.string(),
+    codeuker: Joi.string(),
+    id_role: Joi.number(),
+  }),
+};

@@ -1,12 +1,9 @@
-/**
- * Prisma model tetap didefinisikan di `prisma/schema.prisma`.
- * File ini dipakai untuk mendefinisikan “shape” (select/projection) yang dipakai berulang,
- * terutama untuk memastikan field sensitif (mis. password) tidak ikut ter-return.
- */
-
 export const userPublicSelect = {
-  username: true,
+  id: true,
   id_personal: true,
+  username: true,
   codeuker: true,
-  id_wewenang: true,
+  id_role: true,
+  created_at: true,
+  updated_at: true,
 };

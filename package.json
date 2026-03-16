@@ -20,9 +20,6 @@
         "transform": {
             "^.+\\.[t|j]sx?$": "babel-jest"
         },
-        "moduleNameMapper": {
-            "^@/(.*)$": "<rootDir>/src/$1"
-        },
         "testEnvironment": "node"
     },
     "keywords": [
@@ -50,6 +47,7 @@
     },
     "devDependencies": {
         "@babel/preset-env": "^7.29.0",
+        "@jest/globals": "^30.3.0",
         "@types/bcrypt": "^6.0.0",
         "@types/express": "^5.0.6",
         "@types/jest": "^30.0.0",

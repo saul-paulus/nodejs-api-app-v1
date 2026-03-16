@@ -8,12 +8,12 @@ describe('Integration: POST /api/v1/users', () => {
   let prisma;
 
   beforeAll(async () => {
-    container = setupDIContainer();
+    container = await setupDIContainer();
     prisma = container.resolve('prisma');
     app = createApp(container);
 
     // Initial Cleanup
-    await prisma.user.deleteMany({
+    await prisma.users.deleteMany({
       where: {
         id_personal: {
           in: ['test007100', 'test2007100'],
@@ -24,7 +24,7 @@ describe('Integration: POST /api/v1/users', () => {
 
   afterAll(async () => {
     // Final Cleanup
-    await prisma.user.deleteMany({
+    await prisma.users.deleteMany({
       where: {
         id_personal: {
           in: ['test007100', 'test2007100'],
@@ -51,7 +51,7 @@ describe('Integration: POST /api/v1/users', () => {
     expect(response.body.success).toBe(true);
 
     // Assert Database State
-    const userInDb = await prisma.user.findUnique({
+    const userInDb = await prisma.users.findUnique({
       where: { id_personal: userData.id_personal },
     });
 

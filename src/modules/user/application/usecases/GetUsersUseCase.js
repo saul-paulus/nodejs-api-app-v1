@@ -1,4 +1,4 @@
-export default class GetUsers {
+export default class GetUsersUseCase {
   constructor({ userRepository }) {
     this.userRepository = userRepository;
   }

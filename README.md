@@ -4,205 +4,119 @@
 [![Express Version](https://img.shields.io/badge/Express-4.x-blue)](https://expressjs.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-A robust, enterprise-grade REST API backend template built with **Express.js**. This template provides a highly scalable, maintainable, and testable foundation for building modern web applications, microservices, and large-scale APIs.
+A robust, enterprise-grade REST API backend template built with **Express.js** follow **Clean Architecture**. This template provides a highly scalable, maintainable, and testable foundation.
 
 ## 🏗 Architecture Overview
 
-This project is meticulously designed around three core architectural principles to ensure clean code and separation of concerns:
+This project is meticulously designed around core architectural principles to ensure clean code and separation of concerns:
 
-1. **Layered Architecture**: Separation of routing (Controllers), business logic (Services), and data access (Repositories).
-2. **Modular Architecture**: Features are encapsulated into isolated modules (e.g., User, Product, Order) rather than grouped by technical roles.
-3. **Dependency Injection (DI)**: Powered by [Awilix](https://github.com/jeffijoe/awilix), enabling seamless coupling management, inversion of control, and effortless unit testing.
+1. **Clean Architecture**: Separation of concerns into Domain, Application, Infrastructure, and Interface layers.
+2. **Modular Architecture**: Features are encapsulated into isolated modules (e.g., User, Role, Auth).
+3. **Dependency Injection (DI)**: Powered by [Awilix](https://github.com/jeffijoe/awilix) with **Auto-loading** capabilities.
 
 ---
 
 ## ✨ Key Features
 
-- ✅ **Unified JSON Response Structure**: Consistent and standardized API contracts (`success`, `message`, `data`/`errors`).
-- ✅ **Centralized Exception Handling**: A global error handler that catches all structural, validation, and domain-specific errors and gracefully maps them to standard API responses.
-- ✅ **Dependency Injection Container**: Out-of-the-box DI container setup for managing application context.
-- ✅ **Framework-Agnostic Business Logic**: Services remain completely unaware of the HTTP layer (Express `req`/`res`).
-- ✅ **Scalable Folder Structure**: Modular folder layouts ready for enterprise scalability.
-
----
-
-## 🧰 Tech Stack & Tools
-
-This template leverages the best modern tools to ensure stability, performance, and developer experience.
-
-| Technology/Tool   | Purpose                                                                                                                 |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| **Node.js**       | The runtime environment capable of handling high-throughput asynchronous operations.                                    |
-| **Express.js**    | The minimalist and fast web framework used for routing HTTP requests.                                                   |
-| **Awilix**        | Dependency Injection (DI) container ensuring loose coupling and testability across layers.                              |
-| **Winston**       | Centralized, enterprise-ready logging to write server activities and errors directly to rotating `.log` files.          |
-| **ESLint**        | Enforces consistent code quality and catches syntax errors early. Configured here with `airbnb-base` rules.             |
-| **Nodemon**       | A development utility that automatically restarts the node application when file changes in the directory are detected. |
-| **Dotenv**        | Securely loads environment variables from a `.env` file into `process.env`.                                             |
-| **Helmet & CORS** | Provides robust security by setting various HTTP headers and managing Cross-Origin restrictions.                        |
-| **Prisma**        | Object-Relational Mapping (ORM) for database management.                                                                |
-| **Bcrypt**        | Password hashing for secure authentication.                                                                             |
-| **Jest**          | Testing framework for unit and integration testing.                                                                     |
-| **Joi**           | Schema description language and validator for JavaScript objects.                                                       |
-| **Babel**         | JavaScript compiler that converts code using new syntax into backward-compatible versions of JavaScript.                |
-| **Swagger**       | Doc for Spec API                                                                                                        |
+- ✅ **Clean Architecture Design**: Strict layer boundaries.
+- ✅ **Auto DI Container**: Automatic module registration using Awilix `loadModules`.
+- ✅ **Unified JSON Response**: Consistent structure via `helpers.js`.
+- ✅ **Global Error Handling**: Centralized mapping in `errorHandler.js`.
+- ✅ **Path Aliases**: Uses `@/` for clean imports.
+- ✅ **Prisma ORM**: Modern database access.
+- ✅ **Security**: Helmet, CORS, and Bcrypt integrations.
 
 ---
 
 ## 📂 Folder Structure
 
-The directory structure is purposely domain-driven.
-
 ```text
-api-expresjs/
 src/
-├── core/                   # Cross-cutting concerns & Shared Domain logic
-│   ├── exceptions/         # Global error types (ApiError, DomainError)
-│   ├── middlewares/        # Express global middlewares
-│   └── utils/              # Shared helper functions
 ├── modules/                # Bounded Contexts (Feature-based)
 │   └── user/               # User Module
-│       ├── domain/         # Layer 1: Entities & Business Rules
-│       │   ├── user.js     # User Entity
-│       │   └── errors.js   # User-specific Domain Errors
-│       ├── application/    # Layer 2: Use Cases & Application Logic
-│       │   ├── use-cases/  # Orchestrates business logic
-│       │   │   ├── register-user.js
-│       │   │   └── get-user.js
-│       │   └── dtos/       # Data Transfer Objects
+│       ├── domain/         # Layer 1: Entities & Repository Interfaces
+│       │   ├── entities/   # User.js
+│       │   └── repositories/ # UserRepository.js (Interface)
+│       ├── application/    # Layer 2: Use Cases & DTOs
+│       │   ├── usecases/   # CreateUserUseCase.js, GetUsersUseCase.js
+│       │   └── dtos/       # user.public.dto.js
 │       ├── infrastructure/ # Layer 3: External Implementations
-│       │   ├── persistence/ # Database (Prisma)
-│       │   │   └── prisma-user.repository.js
-│       │   ├── http/        # Web layer (Controller, Routes)
-│       │   │   ├── user.controller.js
-│       │   │   └── user.routes.js
-│       │   └── validation/  # Request validation logic
-│       └── index.js         # Entry point (DI registration)
-└── infrastructure/          # Layer 4: Frameworks & Drivers
-    ├── database/            # Database client setup (Prisma)
-    └── third-party/         # External service clients (Email, S3, etc.)
-...
+│       │   ├── repositories/ # PrismaUserRepository.js
+│       │   └── security/    # PasswordHasher.js
+│       └── interfaces/     # Layer 4: Web Layer
+│           ├── controllers/ # UserController.js
+│           └── routes/      # user.routes.js
+├── infrastructure/         # Global Frameworks & Drivers
+│   ├── database/           # prisma.js, connection.js
+│   ├── services/           # JwtService.js, EmailService.js
+│   ├── cache/              # redis.js
+│   └── queue/              # jobQueue.js
+├── shared/                 # Cross-cutting concerns
+│   ├── errors/             # ApiError.js
+│   ├── middleware/         # errorHandler.js, authMiddleware.js
+│   └── utils/              # helpers.js
+├── config/                 # Configuration
+│   ├── env.js              # Environment variables
+│   └── logger.js           # Winston logger
+├── container.js            # DI Container setup
+├── app.js                  # Express app setup
+└── server.js               # entry point
 ```
+
 ---
 
-
-
-
-## 🔄 Request Lifecycle & Layered Flow
-
-All incoming requests adhere strictly to the following layered pipeline, communicating via the DI Container interface without tight coupling:
+## 🔄 Request Lifecycle
 
 ```text
- Client Request
-       │
-       ▼
-    Router        (Routes HTTP paths to specific Controller methods)
-       │
-       ▼
-  Controller      (Parses request, validates input, formats unified response)
-       │
-       ▼
-   Service        (The core Business/Logic. Layered in Application layer)
-       │
-       ▼
-  Repository      (Data Access Layer. Communicates with Database/ORM)
-       │
-       ▼
-   Database       (PostgreSQL, MongoDB, MySQL, etc.)
+ Client Request -> Router -> Middleware -> Controller -> UseCase -> Repository -> Prisma -> DB
 ```
 
 ### 📖 Layer Descriptions
 
 #### 1. Domain Layer (`modules/*/domain/`)
-- **Purpose**: Pure business logic and domain definitions.
-- **Content**: Entities, Value Objects, Domain Services.
-- **Rule**: NO dependencies on other layers (DB, Express, etc.).
+Pure business logic. Contains **Entities** and **Repository Interfaces**. No dependencies on external frameworks.
 
 #### 2. Application Layer (`modules/*/application/`)
-- **Purpose**: Orchestrates the flow of data to and from the domain layer.
-- **Content**: Use cases (Services), Repository Interfaces, DTOs.
-- **Rule**: Can depend on the Domain Layer.
+Orchestrates business flow. Contains **UseCases** (logic executors) and **DTOs**.
 
 #### 3. Infrastructure Layer (`modules/*/infrastructure/`)
-- **Purpose**: Implementations of external tools and frameworks.
-- **Content**: API Controllers, Repository implementations (Prisma), Router definitions, Validation.
-- **Rule**: Can depend on Application and Domain layers.
+Technical implementations. Contains **Repository implementations**, **Specific Services**, and **Security helpers**.
 
-#### 4. Shared Layer (`src/shared/`)
-- **Purpose**: Shared utilities and base classes.
-- **Content**: Base Exception classes, Global Middlewares, Validation utilities, logging.
+#### 4. Interface Layer (`modules/*/interfaces/`)
+The entry point for the module. Contains **Controllers** and **Routes**.
 
-### 💡 Why this structure?
-- **Highly Modular**: Adding a new feature means adding a new folder in `modules/`.
-- **Easy to Test**: Use cases and Entities can be tested without a database or server.
-- **Decoupled**: You can swap Prisma for another ORM by only changing the `persistence/` folder inside the module.
 ---
 
-## 🚀 Getting Started
+## 🚀 Adding a New Module
 
-### Prerequisites
+Follow this standard flow to add a new module (e.g., `role`):
 
-Ensure you have the following installed on your local development machine:
+### 1. Define Domain
+Create `src/modules/role/domain/repositories/RoleRepository.js` (Interface).
 
-- Node.js >= 16.14.0
-- npm or yarn
+### 2. Implement Repository
+Create `src/modules/role/infrastructure/repositories/PrismaRoleRepository.js` implementing the interface.
 
-### Installation
+### 3. Create Use Case
+Create `src/modules/role/application/usecases/CreateRoleUseCase.js`. Inject `roleRepository` in constructor.
 
-1. Clone the repository and navigate into the project directory:
+### 4. Create Controller
+Create `src/modules/role/interfaces/controllers/RoleController.js`. Inject use cases.
 
-   ```bash
-   cd api-expresjs
-   ```
+### 5. Create Routes
+Create `src/modules/role/interfaces/routes/role.routes.js`.
 
-2. Install dependencies:
-
-   ```bash
-   npm install
-   ```
-
-3. Setup environment variables:
-   Copy the provided `.env.example` file and configure your local settings.
-
-   ```bash
-   cp .env.example .env
-   ```
-
-4. Run the development server:
-   ```bash
-   npm run dev
-   ```
-
-The server will start running on the designated port (default: `http://localhost:3000`).
-
-### Verify Setup
-
-You can verify the API is running correctly by hitting the health check endpoint:
-
-```bash
-curl http://localhost:3000/api/v1/health
+### 6. Register in App
+Update `src/app.js` to register the new routes:
+```javascript
+app.use('/api/v1/roles', container.resolve('roleRoutes'));
 ```
 
----
-
-## 🛠 Adding a New Feature (Module)
-
-To build a new feature (e.g., `Users`), follow these structured steps within the `src/modules` directory:
-
-1. **Create Module Directory**: `src/modules/users`.
-2. **Setup Layers**:
-   - `application/use-cases/`: Business logic services.
-   - `domain/`: Entities and domain errors.
-   - `infrastructure/http/`: Controllers and routes.
-   - `infrastructure/persistence/`: Repository implementation.
-   - `infrastructure/validation/`: Request validation and schemas.
-3. **Register Persistence**: Implement `prisma-users.repository.js`.
-4. **Register Logic**: Implement `users.service.js` (injecting the repository).
-5. **Register Presentation**: Implement `users.controller.js` and `users.routes.js`.
-6. **Export & Register**: Create/update `index.js` within the module to register all components into the main DI container.
+### 7. Optional: Alias in Container
+If you need specific aliases, update `src/container.js`. Otherwise, Awilix will auto-load them as camelCase (e.g., `createRoleUseCase`).
 
 ---
 
 ## 📄 License
 
-This project is open-source software licensed under the [MIT License](LICENSE).
+This project is open-source software licensed under the MIT License. [LICENSE](LICENSE)

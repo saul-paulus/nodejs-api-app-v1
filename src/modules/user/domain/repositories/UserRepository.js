@@ -1,33 +1,36 @@
+/**
+ * UserRepository interface
+ */
 export default class UserRepository {
-  async findByIdPersonal(idPersonal) {
-    throw new Error('Method not implemented: findByIdPersonal');
+  async findByIdPersonal(_idPersonal) {
+    throw new Error('Method not implemented');
   }
 
-  async findByIdPersonalWithSelect(idPersonal) {
-    throw new Error('Method not implemented: findByIdPersonalWithSelect');
-  }
-
-  async getUsers(options) {
-    throw new Error('Method not implemented: getUsers');
+  async getUsers(_params) {
+    throw new Error('Method not implemented');
   }
 
   async countAll() {
-    throw new Error('Method not implemented: countAll');
+    throw new Error('Method not implemented');
   }
 
-  async findId(id) {
-    throw new Error('Method not implemented: findId');
+  async findByIdPersonalWithSelect(_idPersonal) {
+    throw new Error('Method not implemented');
   }
 
-  async createUser(data) {
-    throw new Error('Method not implemented: createUser');
+  async findId(_idUser) {
+    throw new Error('Method not implemented');
   }
 
-  async deleteUser(id) {
-    throw new Error('Method not implemented: deleteUser');
+  async createUser(_data) {
+    throw new Error('Method not implemented');
   }
 
-  async updateUser(id, data) {
-    throw new Error('Method not implemented: updateUser');
+  async deleteUser(_id) {
+    throw new Error('Method not implemented');
+  }
+
+  async updateUser(_idUser, _dataUpdate) {
+    throw new Error('Method not implemented');
   }
 }

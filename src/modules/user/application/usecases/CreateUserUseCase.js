@@ -1,6 +1,6 @@
-import ApiError from '@/shared/exceptions/api-error.js';
+import ApiError from '@/shared/errors/ApiError.js';
 
-export default class RegisterUser {
+export default class CreateUserUseCase {
   constructor({ userRepository, passwordHasher }) {
     this.userRepository = userRepository;
     this.passwordHasher = passwordHasher;
@@ -8,7 +8,6 @@ export default class RegisterUser {
 
   async execute(request) {
     const { id_personal: idPersonal } = request;
-
     const user = await this.userRepository.findByIdPersonal(idPersonal);
 
     if (user) {
