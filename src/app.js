@@ -3,9 +3,10 @@ import cors from 'cors';
 import helmet from 'helmet';
 import { StatusCodes } from 'http-status-codes';
 import swaggerUi from 'swagger-ui-express';
-import errorMiddleware from './core/middlewares/error.middleware.js';
-import ApiError from './core/exceptions/api-error.js';
+import errorMiddleware from './shared/middlewares/error.middleware.js';
+import ApiError from './shared/exceptions/api-error.js';
 import swaggerSpec from './swagger.js';
+
 /**
  * Membuat dan mengkonfigurasi aplikasi Express
  * @param {Object} container - Awilix DI Container
@@ -15,7 +16,7 @@ export const createApp = (container) => {
   const app = express();
 
   // =====================
-  // GOBAL MIDDLEWARES
+  // GLOBAL MIDDLEWARES
   // =====================
   app.use(
     helmet({
@@ -23,40 +24,30 @@ export const createApp = (container) => {
     }),
   );
   app.use(cors());
-  app.use(express.json()); // Parsing application/json
+  app.use(express.json());
   app.use(
     express.urlencoded({
       extended: true,
     }),
-  ); // Parsing application/x-www-form-urlencoded
+  );
 
   // =====================
   // ROUTES REGISTRATION
   // =====================
-  // Tarik router yang telah di-inject dari container
-  const healthRouter = container.resolve('healthRouter');
-  const userRouter = container.resolve('userRouter');
-
   // Daftarkan route dengan prefix (Contoh V1 API)
-  app.use('/api/v1/health', healthRouter);
-  app.use('/api/v1/users', userRouter);
+  app.use('/api/v1/health', container.resolve('healthRoutes'));
+  app.use('/api/v1/users', container.resolve('userRoutes'));
 
   // Swagger
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-  app.use('/register', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-  app.use('/all', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-  app.use('/delete', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
   // =====================
   // 404 & ERROR HANDLING
   // =====================
-
-  // Route Tidak Ditemukan
   app.use((req, res, next) => {
     next(new ApiError(StatusCodes.NOT_FOUND, 'API Route tidak ditemukan'));
   });
 
-  // Global Error Handler
   app.use(errorMiddleware);
 
   return app;

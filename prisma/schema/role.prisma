@@ -1,6 +1,6 @@
 model Role {
-  id_role     Int              @id @default(autoincrement())
-  nm_role        String
+  id_role     Int  @id @default(autoincrement())
+  nm_role     String
 
   users       UserRole[]
   permissions RolePermission[]

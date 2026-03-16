@@ -3,7 +3,7 @@ model UserRole {
   idRole Int
 
   user   Users @relation(fields: [idUser], references: [id])
-  role   Role @relation(fields: [idRole], references: [id_role])
+  role   Role  @relation(fields: [idRole], references: [id_role])
 
   @@id([idUser, idRole])
   @@map("tbl_user_role")

@@ -1,5 +1,5 @@
 import express from 'express';
-import validate from '@/core/middlewares/validate.middleware.js';
+import validate from '@/shared/middlewares/validate.middleware.js';
 import { userRegistrasiValidation, userUpdateValidation } from '../validation/user.validation.js';
 
 export default ({ userController }) => {

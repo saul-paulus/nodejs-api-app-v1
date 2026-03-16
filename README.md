@@ -128,7 +128,7 @@ All incoming requests adhere strictly to the following layered pipeline, communi
 - **Content**: API Controllers, Repository implementations (Prisma), Router definitions, Validation.
 - **Rule**: Can depend on Application and Domain layers.
 
-#### 4. Core Layer (`src/core/`)
+#### 4. Shared Layer (`src/shared/`)
 - **Purpose**: Shared utilities and base classes.
 - **Content**: Base Exception classes, Global Middlewares, Validation utilities, logging.
 

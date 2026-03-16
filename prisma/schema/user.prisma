@@ -4,7 +4,6 @@ model Users {
   username    String
   password    String
   codeuker    String
-  id_role     Int
   created_at  DateTime @default(now())
   updated_at  DateTime @updatedAt
 
