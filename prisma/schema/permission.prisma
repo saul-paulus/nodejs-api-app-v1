@@ -1,6 +1,8 @@
 model Permission {
-  id_permission Int @id @default(autoincrement())
-  nm_permission String
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  id_permission          Int              @id @default(autoincrement())
+  nm_permission          String
+
+  roles       RolePermission[]
+
+  @@map("tbl_permission")
 }

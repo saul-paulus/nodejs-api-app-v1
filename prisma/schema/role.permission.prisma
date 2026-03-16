@@ -1,0 +1,10 @@
+model RolePermission {
+  idRole        Int
+  idPermission    Int
+
+  role          Role       @relation(fields: [idRole], references: [id_role])
+  permission    Permission @relation(fields: [idPermission], references: [id_permission])
+
+  @@id([idRole, idPermission])
+  @@map("tbl_role_permission")
+}

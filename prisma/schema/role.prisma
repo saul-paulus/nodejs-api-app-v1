@@ -1,6 +1,9 @@
 model Role {
-  id_role Int @id @default(autoincrement())
-  nm_role  String
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  id_role     Int              @id @default(autoincrement())
+  nm_role        String
+
+  users       UserRole[]
+  permissions RolePermission[]
+
+  @@map("tbl_role")
 }

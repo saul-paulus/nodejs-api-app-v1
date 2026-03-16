@@ -1,10 +1,14 @@
-model User {
+model Users {
   id          Int      @id @default(autoincrement())
   id_personal String   @unique
   username    String
   password    String
   codeuker    String
-  id_wewenang Int
+  id_role     Int
   created_at  DateTime @default(now())
   updated_at  DateTime @updatedAt
+
+  roles       UserRole[]
+
+  @@map("Users")
 }
