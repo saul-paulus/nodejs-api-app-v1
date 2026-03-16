@@ -1,8 +1,8 @@
 model Permission {
-  id_permission          Int              @id @default(autoincrement())
-  nm_permission          String
+  id_permission Int    @id @default(autoincrement())
+  nm_permission String
 
-  roles       RolePermission[]
+  roles RolePermission[]
 
   @@map("tbl_permission")
 }

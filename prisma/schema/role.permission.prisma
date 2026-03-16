@@ -1,6 +1,6 @@
 model RolePermission {
   idRole        Int
-  idPermission    Int
+  idPermission  Int
 
   role          Role       @relation(fields: [idRole], references: [id_role])
   permission    Permission @relation(fields: [idPermission], references: [id_permission])

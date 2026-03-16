@@ -2,7 +2,7 @@ import { setupDIContainer } from './container.js';
 import { createApp } from './app.js';
 import config from './config/index.js';
 import logger from './config/logger.js';
-import { connectDB, disconnectDB } from './infrastructure/database/index.js';
+import { connectDB, disconnectDB } from './infrastructure/database/prisma.js';
 
 const startServer = async () => {
   try {
@@ -10,7 +10,7 @@ const startServer = async () => {
     await connectDB();
 
     // 1. Setup DI Container
-    const container = setupDIContainer();
+    const container = await setupDIContainer();
 
     // 2. Buat App Express dengan memasukkan container
     const app = createApp(container);

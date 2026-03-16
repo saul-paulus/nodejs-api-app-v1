@@ -40,7 +40,7 @@ describe('Integration: POST /api/v1/users', () => {
       id_personal: 'test007100',
       password: 'test_password',
       codeuker: '02',
-      id_wewenang: 1,
+      id_role: 1,
     };
 
     // Execute request
@@ -67,7 +67,7 @@ describe('Integration: POST /api/v1/users', () => {
       id_personal: 'test007100',
       password: 'test_password',
       codeuker: '02',
-      id_wewenang: 1,
+      id_role: 1,
     };
 
     // Execute request
@@ -85,7 +85,7 @@ describe('Integration: POST /api/v1/users', () => {
       id_personal: '',
       password: '',
       codeuker: '',
-      id_wewenang: '',
+      id_role: '',
     };
 
     // Execute rqeuest

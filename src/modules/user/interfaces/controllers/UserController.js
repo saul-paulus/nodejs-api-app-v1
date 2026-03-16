@@ -1,15 +1,18 @@
 import { StatusCodes } from 'http-status-codes';
-import { successResponse } from '@/core/utils/responseApi.js';
+import { successResponse } from '@/shared/utils/responseApi.js';
 
-class UserController {
-  constructor({ userService }) {
-    this.userService = userService;
+export default class UserController {
+  constructor({ registerUser, getUsers, getUserByIdPersonal, deleteUser, updateUser }) {
+    this.registerUser = registerUser;
+    this.getUsers = getUsers;
+    this.getUserByIdPersonal = getUserByIdPersonal;
+    this.deleteUser = deleteUser;
+    this.updateUser = updateUser;
   }
 
   async handlerCreateUser(req, res, next) {
     try {
-      const result = await this.userService.userRegister(req.body);
-
+      const result = await this.registerUser.execute(req.body);
       res.status(StatusCodes.CREATED).json(successResponse(StatusCodes.CREATED, 'The request has been processed successfully', result));
     } catch (error) {
       next(error);
@@ -21,16 +24,11 @@ class UserController {
       const page = parseInt(req.query.page, 10) || 1;
       const limit = parseInt(req.query.limit, 10) || 10;
 
-      const { users, total } = await this.userService.getUsers({ page, limit });
+      const { users, total } = await this.getUsers.execute({ page, limit });
 
       const totalPages = Math.ceil(total / limit);
 
-      const meta = {
-        total,
-        page,
-        limit,
-        totalPages,
-      };
+      const meta = { total, page, limit, totalPages };
 
       const { protocol } = req;
       const host = req.get('host');
@@ -59,8 +57,7 @@ class UserController {
   async handlerGetUserByIdPersonal(req, res, next) {
     try {
       const { idPersonal } = req.params;
-      const user = await this.userService.getUserByIdPersonal(idPersonal);
-
+      const user = await this.getUserByIdPersonal.execute(idPersonal);
       res.status(StatusCodes.OK).json(successResponse(StatusCodes.OK, 'User retrieved successfully', user));
     } catch (error) {
       next(error);
@@ -70,8 +67,7 @@ class UserController {
   async handlerDeleteUser(req, res, next) {
     try {
       const { id } = req.params;
-      const user = await this.userService.deleteUser(Number(id));
-
+      const user = await this.deleteUser.execute(Number(id));
       res.status(StatusCodes.OK).json(successResponse(StatusCodes.OK, 'User delete successfully', user));
     } catch (error) {
       next(error);
@@ -81,14 +77,10 @@ class UserController {
   async handlerUpdateUser(req, res, next) {
     try {
       const { id } = req.params;
-
-      const user = await this.userService.updateUser(Number(id), req.body);
-
+      const user = await this.updateUser.execute(Number(id), req.body);
       res.status(StatusCodes.OK).json(successResponse(StatusCodes.OK, 'User update successfully', user));
     } catch (error) {
       next(error);
     }
   }
 }
-
-export default UserController;
