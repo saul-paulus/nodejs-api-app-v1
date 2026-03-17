@@ -30,7 +30,7 @@ export default class PrismaUserRepository {
     });
   }
 
-  async findId(idUser) {
+  async findById(idUser) {
     return this.prisma.users.findUnique({
       where: { id: idUser },
     });

@@ -31,6 +31,8 @@ export const setupDIContainer = async () => {
     getUserByIdPersonal: asFunction(({ getUserByIdPersonalUseCase }) => getUserByIdPersonalUseCase).scoped(),
     deleteUser: asFunction(({ deleteUserUseCase }) => deleteUserUseCase).scoped(),
     updateUser: asFunction(({ updateUserUseCase }) => updateUserUseCase).scoped(),
+    getMeUserAuth: asFunction(({ getMeUserUseCase }) => getMeUserUseCase).scoped(),
+
     /*
      ========================== Authenticate User ============================
     */

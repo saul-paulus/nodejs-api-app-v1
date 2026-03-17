@@ -6,7 +6,7 @@ export default class DeleteUserUseCase {
   }
 
   async execute(id) {
-    const user = await this.userRepository.findId(id);
+    const user = await this.userRepository.findById(id);
     if (!user) {
       throw new ApiError(404, 'User not found');
     }

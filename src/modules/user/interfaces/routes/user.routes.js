@@ -12,6 +12,7 @@ export default ({ userController, authMiddleware }) => {
   router.get('/:idPersonal', (req, res, next) => userController.handlerGetUserByIdPersonal(req, res, next));
   router.delete('/:id', (req, res, next) => userController.handlerDeleteUser(req, res, next));
   router.put('/:id', validate(userUpdateValidation), userController.handlerUpdateUser.bind(userController));
+  router.get('/auth/me', userController.handlerGetMeUserAuth.bind(userController));
 
   return router;
 };

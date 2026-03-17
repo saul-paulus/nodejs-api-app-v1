@@ -2,12 +2,13 @@ import { StatusCodes } from 'http-status-codes';
 import { successResponse } from '@/shared/utils/apiResponse.js';
 
 export default class UserController {
-  constructor({ registerUser, getUsers, getUserByIdPersonal, deleteUser, updateUser }) {
+  constructor({ registerUser, getUsers, getUserByIdPersonal, deleteUser, updateUser, getMeUserAuth }) {
     this.registerUser = registerUser;
     this.getUsers = getUsers;
     this.getUserByIdPersonal = getUserByIdPersonal;
     this.deleteUser = deleteUser;
     this.updateUser = updateUser;
+    this.getMeUserAuth = getMeUserAuth;
   }
 
   async handlerCreateUser(req, res, next) {
@@ -55,6 +56,17 @@ export default class UserController {
       const { id } = req.params;
       const user = await this.updateUser.execute(Number(id), req.body);
       res.status(StatusCodes.OK).json(successResponse(StatusCodes.OK, 'User updated successfully', user));
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  async handlerGetMeUserAuth(req, res, next) {
+    try {
+      const { userId } = req.user;
+
+      const user = await this.getMeUserAuth.execute(userId);
+      res.status(StatusCodes.OK).json(successResponse(StatusCodes.OK, 'Get data user auth successfully', user));
     } catch (error) {
       next(error);
     }

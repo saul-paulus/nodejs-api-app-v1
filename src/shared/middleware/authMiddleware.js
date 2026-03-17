@@ -1,7 +1,7 @@
 import { StatusCodes } from 'http-status-codes';
 import ApiError from '../errors/ApiError.js';
 
-const authMiddleware = (tokenService) => {
+const authMiddleware = ({ tokenService }) => {
   return (req, _res, next) => {
     const authHeader = req.headers.authorization;
 
@@ -16,7 +16,7 @@ const authMiddleware = (tokenService) => {
       req.user = decoded;
       return next();
     } catch (error) {
-      return next(new ApiError(StatusCodes.UNAUTHORIZED, 'Authentication failed: Token is invalid or expired'));
+      return next(new ApiError(StatusCodes.UNAUTHORIZED, error.message || 'Authentication failed: Token is invalid or expired'));
     }
   };
 };

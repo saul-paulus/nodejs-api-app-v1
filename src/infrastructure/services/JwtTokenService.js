@@ -24,7 +24,7 @@ export default class JwtTokenService extends TokenService {
     try {
       return jwt.verify(token, this.secret);
     } catch (error) {
-      throw new ApiError(401, 'Token is invalid or expired');
+      throw new ApiError(401, `Authentication failed: ${error.message}`);
     }
   }
 
