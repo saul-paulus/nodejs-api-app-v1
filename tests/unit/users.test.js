@@ -26,6 +26,7 @@ describe('POST /api/v1/users', () => {
       getUserByIdPersonal: asValue({ execute: jest.fn() }),
       deleteUser: asValue({ execute: jest.fn() }),
       updateUser: asValue({ execute: jest.fn() }),
+      authMiddleware: asValue((req, res, next) => next()), // Bypass authentication for unit tests
     });
 
     // Create app with modified container

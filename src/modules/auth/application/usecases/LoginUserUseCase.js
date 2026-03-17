@@ -31,7 +31,6 @@ export default class LoginUserUseCase {
     });
 
     return {
-      ...user,
       token_type: 'Bearer',
       access_token: token,
       expires_in: this.tokenService.getExpirationInSeconds(),

@@ -1,18 +1,44 @@
 import supertest from 'supertest';
 import { setupDIContainer } from '@/container.js';
 import { createApp } from '@/app.js';
+import PasswordHasher from '@/modules/user/infrastructure/security/PasswordHasher.js';
 
 describe('Integration: POST /api/v1/users', () => {
   let app;
   let container;
   let prisma;
+  let token;
+  const passwordHasher = new PasswordHasher();
 
   beforeAll(async () => {
     container = await setupDIContainer();
     prisma = container.resolve('prisma');
     app = createApp(container);
 
-    // Initial Cleanup
+    const testAdminId = 'admin_test_integration';
+    const hashedPassword = await passwordHasher.hash('admin_password');
+
+    // Create a test admin user for authentication
+    await prisma.users.upsert({
+      where: { id_personal: testAdminId },
+      update: { password: hashedPassword },
+      create: {
+        username: 'Admin Test',
+        id_personal: testAdminId,
+        password: hashedPassword,
+        codeuker: '01',
+        id_role: 1,
+      },
+    });
+
+    // Login to get JWT Token
+    const loginResponse = await supertest(app).post('/api/v1/auth/login').send({
+      id_personal: testAdminId,
+      password: 'admin_password',
+    });
+    token = loginResponse.body.data.access_token;
+
+    // Initial Cleanup for test users
     await prisma.users.deleteMany({
       where: {
         id_personal: {
@@ -27,7 +53,7 @@ describe('Integration: POST /api/v1/users', () => {
     await prisma.users.deleteMany({
       where: {
         id_personal: {
-          in: ['test007100', 'test2007100'],
+          in: ['test007100', 'test2007100', 'admin_test_integration'],
         },
       },
     });
@@ -43,8 +69,8 @@ describe('Integration: POST /api/v1/users', () => {
       id_role: 1,
     };
 
-    // Execute request
-    const response = await supertest(app).post('/api/v1/users').send(userData);
+    // Execute request with Authorization header
+    const response = await supertest(app).post('/api/v1/users').set('Authorization', `Bearer ${token}`).send(userData);
 
     // Assert API Response
     expect(response.status).toBe(201);
@@ -70,8 +96,8 @@ describe('Integration: POST /api/v1/users', () => {
       id_role: 1,
     };
 
-    // Execute request
-    const response = await supertest(app).post('/api/v1/users').send(userData);
+    // Execute request with Authorization header
+    const response = await supertest(app).post('/api/v1/users').set('Authorization', `Bearer ${token}`).send(userData);
 
     // Assertions
     expect(response.status).toBe(400);
@@ -88,11 +114,28 @@ describe('Integration: POST /api/v1/users', () => {
       id_role: '',
     };
 
-    // Execute rqeuest
-    const response = await supertest(app).post('/api/v1/users').send(userData);
+    // Execute request with Authorization header
+    const response = await supertest(app).post('/api/v1/users').set('Authorization', `Bearer ${token}`).send(userData);
 
     // Assertions
     expect(response.status).toBe(400);
+    expect(response.body.success).toBe(false);
+  });
+
+  it('Should reject if unauthorized', async () => {
+    const userData = {
+      username: 'unauthorized',
+      id_personal: 'test_unauth',
+      password: 'password',
+      codeuker: '02',
+      id_role: 1,
+    };
+
+    // Execute request WITHOUT Authorization header
+    const response = await supertest(app).post('/api/v1/users').send(userData);
+
+    // Assertions
+    expect(response.status).toBe(401);
     expect(response.body.success).toBe(false);
   });
 });
