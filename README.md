@@ -117,6 +117,13 @@ If you need specific aliases, update `src/container.js`. Otherwise, Awilix will 
 
 ---
 
+### 8. Tesing API
+##### User Login With API
+![alt text](image.png)
+
+##### User Get Me, Autheticated successfully
+![alt text](image-1.png)
+
 ## 📄 License
 
 This project is open-source software licensed under the MIT License. [LICENSE](LICENSE)
