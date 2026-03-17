@@ -1,129 +1,121 @@
-# Enterprise Express.js REST API Template
+# Enterprise Express.js Starter Kit
 
-[![NODEJS Version](https://img.shields.io/badge/Node.js-%3E=16.14-brightgreen)](https://nodejs.org/en/)
-[![Express Version](https://img.shields.io/badge/Express-4.x-blue)](https://expressjs.com/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Node.js Version](https://img.shields.io/badge/Node.js-%3E=18.0.0-brightgreen)](https://nodejs.org/)
+[![Express Version](https://img.shields.io/badge/Express-4.18-blue)](https://expressjs.com/)
+[![Prisma](https://img.shields.io/badge/ORM-Prisma-2b2d42)](https://www.prisma.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A robust, enterprise-grade REST API backend template built with **Express.js** follow **Clean Architecture**. This template provides a highly scalable, maintainable, and testable foundation.
+A maintainable, scalable, and enterprise-ready backend template built with **Node.js** and **Express.js**, following **Clean Architecture** principles and **Modular Design**.
 
-## 🏗 Architecture Overview
+## 🏗 Architecture & Design Patterns
 
-This project is meticulously designed around core architectural principles to ensure clean code and separation of concerns:
+### Clean Architecture
+The project is divided into four main layers to ensure separation of concerns and testability:
+- **Domain Layer**: Contains Entities and Repository Interfaces (Pure Business Logic).
+- **Application Layer**: Contains Use Cases and DTOs (Orchestrates Business Flow).
+- **Infrastructure Layer**: Technical implementations (Prisma, Security, Services).
+- **Interface Layer**: Web layer containing Controllers and Routes.
 
-1. **Clean Architecture**: Separation of concerns into Domain, Application, Infrastructure, and Interface layers.
-2. **Modular Architecture**: Features are encapsulated into isolated modules (e.g., User, Role, Auth).
-3. **Dependency Injection (DI)**: Powered by [Awilix](https://github.com/jeffijoe/awilix) with **Auto-loading** capabilities.
+### Key Patterns
+- **Modular Monolith**: Features are encapsulated in independent modules.
+- **Dependency Injection**: Managed via [Awilix](https://github.com/jeffijoe/awilix) for automatic wiring.
+- **Repository Pattern**: Abstraction of data access.
+- **Middleware-based Validation**: Request validation using [Joi](https://joi.dev/).
 
----
+## 🛠 Tech Stack
 
-## ✨ Key Features
+- **Core**: Node.js (ESM), Express.js
+- **Database & ORM**: PostgreSQL/MySQL, Prisma
+- **DI Container**: Awilix
+- **Authentication**: JWT (jsonwebtoken), Bcrypt
+- **Security**: Helmet, CORS
+- **Logging**: Winston & Winston Daily Rotate File
+- **Validation**: Joi
+- **Documentation**: Swagger UI (swagger-jsdoc)
+- **Testing**: Jest, Supertest
 
-- ✅ **Clean Architecture Design**: Strict layer boundaries.
-- ✅ **Auto DI Container**: Automatic module registration using Awilix `loadModules`.
-- ✅ **Unified JSON Response**: Consistent structure via `helpers.js`.
-- ✅ **Global Error Handling**: Centralized mapping in `errorHandler.js`.
-- ✅ **Path Aliases**: Uses `@/` for clean imports.
-- ✅ **Prisma ORM**: Modern database access.
-- ✅ **Security**: Helmet, CORS, and Bcrypt integrations.
+## 🚀 Getting Started
 
----
+### Prerequisites
+- Node.js >= 18.x
+- NPM or Yarn
+- Database (PostgreSQL/MySQL)
 
-## 📂 Folder Structure
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd start-api-expresjs
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Setup Environment Variables:
+   ```bash
+   cp .env.example .env
+   # Update JWT_SECRET and DATABASE_URL in .env
+   ```
+
+### Database Setup
+```bash
+# Generate Prisma Client
+npx prisma generate
+
+# Sync Database Schema
+npx prisma db push
+```
+
+### Running the App
+```bash
+# Development mode
+npm run dev
+
+# Production mode
+npm run start
+```
+
+## 📖 API Documentation
+
+Documentation is automatically generated and available via Swagger UI.
+
+- **Swagger URL**: `http://localhost:3000/api-docs`
+
+### Core Endpoints (`/api/v1`)
+
+| Module | Method | Endpoint | Description | Auth |
+| :--- | :--- | :--- | :--- | :--- |
+| **Auth** | POST | `/auth/login` | Login to get JWT Token | Public |
+| **User** | GET | `/users/auth/me` | Get current user profile | Private |
+| **User** | GET | `/users` | List all users (Paginated) | Private |
+| **User** | POST | `/users` | Create new user | Private |
+| **User** | GET | `/users/:idPersonal` | Get user by Personal ID | Private |
+| **User** | PUT | `/users/:id` | Update user data | Private |
+| **User** | DELETE | `/users/:id` | Delete user | Private |
+| **Health** | GET | `/health` | Check system health | Public |
+
+## 🧪 Testing
+
+```bash
+# Run all tests
+npm test
+
+# Run specific test file
+npm test tests/integration/auth.integration.test.js
+```
+
+## 📁 Project Structure
 
 ```text
 src/
-├── modules/                # Bounded Contexts (Feature-based)
-│   └── user/               # User Module
-│       ├── domain/         # Layer 1: Entities & Repository Interfaces
-│       │   ├── entities/   # User.js
-│       │   └── repositories/ # UserRepository.js (Interface)
-│       ├── application/    # Layer 2: Use Cases & DTOs
-│       │   ├── usecases/   # CreateUserUseCase.js, GetUsersUseCase.js
-│       │   └── dtos/       # user.public.dto.js
-│       ├── infrastructure/ # Layer 3: External Implementations
-│       │   ├── repositories/ # PrismaUserRepository.js
-│       │   └── security/    # PasswordHasher.js
-│       └── interfaces/     # Layer 4: Web Layer
-│           ├── controllers/ # UserController.js
-│           └── routes/      # user.routes.js
-├── infrastructure/         # Global Frameworks & Drivers
-│   ├── database/           # prisma.js, connection.js
-│   ├── services/           # JwtService.js, EmailService.js
-│   ├── cache/              # redis.js
-│   └── queue/              # jobQueue.js
-├── shared/                 # Cross-cutting concerns
-│   ├── errors/             # ApiError.js
-│   ├── middleware/         # errorHandler.js, authMiddleware.js
-│   └── utils/              # helpers.js
-├── config/                 # Configuration
-│   ├── env.js              # Environment variables
-│   └── logger.js           # Winston logger
-├── container.js            # DI Container setup
-├── app.js                  # Express app setup
-└── server.js               # entry point
+├── modules/                # Domain-driven modules (Authentication, User, etc.)
+├── infrastructure/         # Global external services & database config
+├── shared/                 # Shared utilities, errors, and middleware
+├── config/                 # App configurations (Env, Logger)
+├── container.js            # Dependency Injection Registry
+├── app.js                  # Express App Setup
+└── server.js               # Application Entry Point
 ```
-
----
-
-## 🔄 Request Lifecycle
-
-```text
- Client Request -> Router -> Middleware -> Controller -> UseCase -> Repository -> Prisma -> DB
-```
-
-### 📖 Layer Descriptions
-
-#### 1. Domain Layer (`modules/*/domain/`)
-Pure business logic. Contains **Entities** and **Repository Interfaces**. No dependencies on external frameworks.
-
-#### 2. Application Layer (`modules/*/application/`)
-Orchestrates business flow. Contains **UseCases** (logic executors) and **DTOs**.
-
-#### 3. Infrastructure Layer (`modules/*/infrastructure/`)
-Technical implementations. Contains **Repository implementations**, **Specific Services**, and **Security helpers**.
-
-#### 4. Interface Layer (`modules/*/interfaces/`)
-The entry point for the module. Contains **Controllers** and **Routes**.
-
----
-
-## 🚀 Adding a New Module
-
-Follow this standard flow to add a new module (e.g., `role`):
-
-### 1. Define Domain
-Create `src/modules/role/domain/repositories/RoleRepository.js` (Interface).
-
-### 2. Implement Repository
-Create `src/modules/role/infrastructure/repositories/PrismaRoleRepository.js` implementing the interface.
-
-### 3. Create Use Case
-Create `src/modules/role/application/usecases/CreateRoleUseCase.js`. Inject `roleRepository` in constructor.
-
-### 4. Create Controller
-Create `src/modules/role/interfaces/controllers/RoleController.js`. Inject use cases.
-
-### 5. Create Routes
-Create `src/modules/role/interfaces/routes/role.routes.js`.
-
-### 6. Register in App
-Update `src/app.js` to register the new routes:
-```javascript
-app.use('/api/v1/roles', container.resolve('roleRoutes'));
-```
-
-### 7. Optional: Alias in Container
-If you need specific aliases, update `src/container.js`. Otherwise, Awilix will auto-load them as camelCase (e.g., `createRoleUseCase`).
-
----
-
-### 8. Tesing API
-##### User Login With API
-![alt text](image.png)
-
-##### User Get Me, Autheticated successfully
-![alt text](image-1.png)
 
 ## 📄 License
-
-This project is open-source software licensed under the MIT License. [LICENSE](LICENSE)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
