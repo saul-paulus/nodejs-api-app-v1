@@ -8,8 +8,8 @@ export default class AuthController {
 
   async handlerLoginUser(req, res, next) {
     try {
-      await this.loginUser.execute(req.body);
-      res.status(StatusCodes.OK).json(successResponse(StatusCodes.OK, 'User has been authenticated', '-'));
+      const result = await this.loginUser.execute(req.body);
+      res.status(StatusCodes.OK).json(successResponse(StatusCodes.OK, 'User has been authenticated', result));
     } catch (error) {
       next(error);
     }

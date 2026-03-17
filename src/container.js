@@ -1,4 +1,5 @@
 import { createContainer, InjectionMode, asValue, Lifetime, asFunction } from 'awilix';
+import JwtTokenService from './infrastructure/services/JwtTokenService.js';
 import prisma from './infrastructure/database/prisma.js';
 
 export const setupDIContainer = async () => {
@@ -33,6 +34,7 @@ export const setupDIContainer = async () => {
      ========================== Authenticate User ============================
     */
     loginUser: asFunction(({ loginUserUseCase }) => loginUserUseCase).scoped(),
+    tokenService: asFunction(() => new JwtTokenService()).singleton(),
   });
 
   return container;

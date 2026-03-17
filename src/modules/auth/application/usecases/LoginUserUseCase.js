@@ -1,9 +1,10 @@
 import ApiError from '@/shared/errors/ApiError.js';
 
 export default class LoginUserUseCase {
-  constructor({ userRepository, passwordHasher }) {
+  constructor({ userRepository, passwordHasher, tokenService }) {
     this.userRepository = userRepository;
     this.passwordHasher = passwordHasher;
+    this.tokenService = tokenService;
   }
 
   async execute(request) {
@@ -23,6 +24,13 @@ export default class LoginUserUseCase {
 
     // Remove password before returning
     delete user.password;
-    return user;
+    const token = this.tokenService.generateAccessToken({
+      userId: user.id,
+      role: user.id_role,
+    });
+
+    return {
+      accessToken: token,
+    };
   }
 }
