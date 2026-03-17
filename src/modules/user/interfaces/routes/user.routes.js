@@ -2,8 +2,10 @@ import express from 'express';
 import validate from '@/shared/middleware/validateMiddleware.js';
 import { userRegistrasiValidation, userUpdateValidation } from '../../infrastructure/validation/user.validation.js';
 
-export default ({ userController }) => {
+export default ({ userController, authMiddleware }) => {
   const router = express.Router();
+
+  router.use(authMiddleware);
 
   router.post('/', validate(userRegistrasiValidation), userController.handlerCreateUser.bind(userController));
   router.get('/', (req, res, next) => userController.handlerGetUsers(req, res, next));

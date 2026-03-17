@@ -1,6 +1,7 @@
 import { createContainer, InjectionMode, asValue, Lifetime, asFunction } from 'awilix';
 import JwtTokenService from './infrastructure/services/JwtTokenService.js';
 import prisma from './infrastructure/database/prisma.js';
+import authMiddleware from './shared/middleware/authMiddleware.js';
 
 export const setupDIContainer = async () => {
   const container = createContainer({
@@ -35,6 +36,11 @@ export const setupDIContainer = async () => {
     */
     loginUser: asFunction(({ loginUserUseCase }) => loginUserUseCase).scoped(),
     tokenService: asFunction(() => new JwtTokenService()).singleton(),
+
+    /*
+    =========================== Middleware ===================================
+    */
+    authMiddleware: asFunction(authMiddleware).singleton(),
   });
 
   return container;

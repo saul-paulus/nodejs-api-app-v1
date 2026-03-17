@@ -24,13 +24,16 @@ export default class LoginUserUseCase {
 
     // Remove password before returning
     delete user.password;
+
     const token = this.tokenService.generateAccessToken({
       userId: user.id,
       role: user.id_role,
     });
 
     return {
-      accessToken: token,
+      token_type: 'Bearer',
+      access_token: token,
+      expires_in: this.tokenService.getExpirationInSeconds(),
     };
   }
 }

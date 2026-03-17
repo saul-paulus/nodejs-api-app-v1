@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken';
+import ms from 'ms';
 import ApiError from '@/shared/errors/ApiError.js';
 import { TokenService } from '@/modules/auth/domain/services/TokenService.js';
 
@@ -6,7 +7,7 @@ export default class JwtTokenService extends TokenService {
   constructor() {
     super();
     this.secret = process.env.JWT_SECRET;
-    this.expiresIn = '1h';
+    this.expiresIn = process.env.JWT_TTL || '1h';
 
     if (!this.secret) {
       throw new Error('JWT_SECRET is not defined in environment variables');
@@ -25,5 +26,9 @@ export default class JwtTokenService extends TokenService {
     } catch (error) {
       throw new ApiError(401, 'Token is invalid or expired');
     }
+  }
+
+  getExpirationInSeconds() {
+    return ms(this.expiresIn) / 1000;
   }
 }
