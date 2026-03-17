@@ -19,10 +19,10 @@ export default (schema) => (req, res, next) => {
     const errorMessage = error.details.map((details) => details.message).join(', ');
     return next(new ApiError(400, errorMessage));
   }
-  
+
   if (value.params) Object.assign(req.params, value.params);
   if (value.query) Object.assign(req.query, value.query);
   if (value.body) req.body = value.body;
-  
+
   return next();
 };
