@@ -117,5 +117,21 @@ src/
 └── server.js               # Application Entry Point
 ```
 
+## 🛠 Modular Development Flow (Clean Architecture)
+
+Following the Clean Architecture principles, here is the standard flow to add a new module (e.g., `Auth`):
+
+1. **Domain Layer**: Define repository interfaces in `src/modules/auth/domain/repositories/`.
+2. **Infrastructure Layer**: Implement repository using Prisma in `src/modules/auth/infrastructure/repositories/`.
+3. **Application Layer**: Create business logic in `src/modules/auth/application/usecases/`.
+4. **Interfaces Layer**: 
+   - Define controllers in `src/modules/auth/interfaces/controllers/`.
+   - Define routes in `src/modules/auth/interfaces/routes/`.
+5. **Registration**:
+   - **DI**: Awilix automatically loads modules. Register aliases in `src/container.js` if needed.
+   - **Express**: Register the new router in `src/app.js`.
+
+Refer to the full [Module Development Flow Guide](docs/module-development-flow.md) for naming conventions and code examples.
+
 ## 📄 License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
