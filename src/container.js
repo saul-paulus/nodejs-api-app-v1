@@ -20,12 +20,19 @@ export const setupDIContainer = async () => {
   });
 
   container.register({
+    /*
+      ========================== Management User ============================
+    */
     userRepository: asFunction(({ prismaUserRepository }) => prismaUserRepository).scoped(),
     registerUser: asFunction(({ createUserUseCase }) => createUserUseCase).scoped(),
     getUsers: asFunction(({ getUsersUseCase }) => getUsersUseCase).scoped(),
     getUserByIdPersonal: asFunction(({ getUserByIdPersonalUseCase }) => getUserByIdPersonalUseCase).scoped(),
     deleteUser: asFunction(({ deleteUserUseCase }) => deleteUserUseCase).scoped(),
     updateUser: asFunction(({ updateUserUseCase }) => updateUserUseCase).scoped(),
+    /*
+     ========================== Authenticate User ============================
+    */
+    loginUser: asFunction(({ loginUserUseCase }) => loginUserUseCase).scoped(),
   });
 
   return container;

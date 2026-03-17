@@ -18,6 +18,7 @@ export const createApp = (container) => {
   // Routes
   app.use('/api/v1/health', container.resolve('healthRoutes'));
   app.use('/api/v1/users', container.resolve('userRoutes'));
+  app.use('/api/v1/auth', container.resolve('authRoutes'));
 
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 

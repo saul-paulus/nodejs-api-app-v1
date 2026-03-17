@@ -1,0 +1,28 @@
+import ApiError from '@/shared/errors/ApiError.js';
+
+export default class LoginUserUseCase {
+  constructor({ userRepository, passwordHasher }) {
+    this.userRepository = userRepository;
+    this.passwordHasher = passwordHasher;
+  }
+
+  async execute(request) {
+    const { id_personal: idPersonal, password } = request;
+
+    const user = await this.userRepository.findByIdPersonal(idPersonal);
+
+    if (!user) {
+      throw new ApiError(401, 'Id Personal or Password is not valid');
+    }
+
+    const isPasswordValid = await this.passwordHasher.compare(password, user.password);
+
+    if (!isPasswordValid) {
+      throw new ApiError(401, 'Id Personal or Password is not valid');
+    }
+
+    // Remove password before returning
+    delete user.password;
+    return user;
+  }
+}
