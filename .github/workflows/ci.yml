@@ -30,7 +30,7 @@ jobs:
           --health-retries 5
 
     env:
-      DATABASE_URL: postgresql://user:password@localhost:5432/test_db
+      DB_URL: postgresql://user:password@localhost:5432/test_db
       JWT_SECRET: ci_test_secret
       NODE_ENV: test
 
