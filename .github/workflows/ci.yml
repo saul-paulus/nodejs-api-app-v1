@@ -46,10 +46,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # 🔥 WAJIB kalau kamu pakai schema modular
-      - name: Build Prisma Schema
-        run: npm run prisma:schema:build
-
+      # Dengan schema folder (Prisma v5.15+), langkah merge manual tidak lagi diperlukan.
       - name: Validate Prisma Schema
         run: npx prisma validate
 
