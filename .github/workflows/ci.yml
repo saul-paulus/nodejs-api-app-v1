@@ -44,20 +44,18 @@ jobs:
       - name: Run dependency-cruiser (enforce architecture boundaries)
         run: npx --yes dependency-cruiser --config .dependency-cruiser.js --validate src --output-type err
 
-      - name: Build Prisma schema
-        run: npm run prisma:schema:build
-
-      - name: Generate Prisma client
-        run: npx prisma generate
+      - name: Build and Generate Prisma
+        run: |
+          npx prisma generate
 
       - name: Sync Database schema
         run: npx prisma db push --skip-generate
         env:
-          DB_URL: postgresql://user:password@localhost:5432/test_db
+          DB_URL: postgresql://user:password@127.0.0.1:5432/test_db
 
       - name: Run tests
         run: npm test
         env:
-          DB_URL: postgresql://user:password@localhost:5432/test_db
+          DB_URL: postgresql://user:password@127.0.0.1:5432/test_db
           JWT_SECRET: ci_test_secret
           NODE_ENV: test
