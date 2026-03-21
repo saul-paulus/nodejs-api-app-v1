@@ -1,4 +1,4 @@
-import ApiError from '@/shared/errors/ApiError.js';
+import ApiError from '#/shared/errors/ApiError.js';
 
 export default class DeleteUserUseCase {
   constructor({ userRepository }) {

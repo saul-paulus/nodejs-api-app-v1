@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import ms from 'ms';
-import ApiError from '@/shared/errors/ApiError.js';
-import { TokenService } from '@/modules/auth/domain/services/TokenService.js';
+import ApiError from '#/shared/errors/ApiError.js';
+import { TokenService } from '#/modules/auth/domain/services/TokenService.js';
 
 export default class JwtTokenService extends TokenService {
   constructor() {

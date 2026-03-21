@@ -1,4 +1,4 @@
-import { successResponse } from '@/shared/utils/apiResponse.js';
+import { successResponse } from '#/shared/utils/apiResponse.js';
 import { StatusCodes } from 'http-status-codes';
 
 export default class AuthController {

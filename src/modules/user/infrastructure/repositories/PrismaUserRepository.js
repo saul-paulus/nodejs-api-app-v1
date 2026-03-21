@@ -1,4 +1,4 @@
-import { userPublicSelect } from '@/modules/user/application/dtos/user.public.dto.js';
+import { userPublicSelect } from '#/modules/user/application/dtos/user.public.dto.js';
 
 export default class PrismaUserRepository {
   constructor({ prisma }) {

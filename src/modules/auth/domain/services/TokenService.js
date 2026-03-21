@@ -1,4 +1,4 @@
-import ApiError from '@/shared/errors/ApiError.js';
+import ApiError from '#/shared/errors/ApiError.js';
 
 export class TokenService {
   generateAccessToken(payload) {

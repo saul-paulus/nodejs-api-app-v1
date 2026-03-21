@@ -1,5 +1,5 @@
 import Joi from 'joi';
-import ApiError from '@/shared/errors/ApiError.js';
+import ApiError from '#/shared/errors/ApiError.js';
 
 export default (schema) => (req, res, next) => {
   const validSchema = {};
