@@ -18,7 +18,8 @@ export default (err, req, res, _next) => {
 
   res.locals.errorMessage = err.message;
 
-  const response = errorResponse(statusCode, message, process.env.NODE_ENV === 'development' ? { stack: err.stack } : null);
+  const isDevelopment = process.env.NODE_ENV === 'development';
+  const response = errorResponse(statusCode, message, isDevelopment ? { stack: err.stack, details: err.errors || null } : err.errors || null);
 
   res.status(statusCode).send(response);
 };

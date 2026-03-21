@@ -27,10 +27,18 @@ export default class LoginUserUseCase {
 
     const token = this.tokenService.generateAccessToken({
       userId: user.id,
-      role: user.id_role,
+      idPersonal: user.id_personal,
     });
 
+    const userData = {
+      username: user.username,
+      id_personal: user.id_personal,
+      codeuker: user.codeuker,
+      id_role: user.id_role,
+    };
+
     return {
+      user: userData,
       token_type: 'Bearer',
       access_token: token,
       expires_in: this.tokenService.getExpirationInSeconds(),

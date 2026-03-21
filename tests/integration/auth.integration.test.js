@@ -50,6 +50,7 @@ describe('Integration: POST /api/v1/auth/login', () => {
 
     expect(response.status).toBe(200);
     expect(response.body.success).toBe(true);
+    expect(response.body.data.user).toHaveProperty('id_role');
     expect(response.body.data).not.toHaveProperty('password');
     expect(response.body.data).toHaveProperty('access_token');
   });

@@ -22,3 +22,5 @@ const authMiddleware = ({ tokenService }) => {
 };
 
 export default authMiddleware;
+
+
