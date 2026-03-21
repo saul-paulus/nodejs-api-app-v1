@@ -2,7 +2,11 @@ model Permission {
   id_permission Int    @id @default(autoincrement())
   nm_permission String
 
+  module      String
+  action     String
+
   roles RolePermission[]
 
+  @@unique([module, action])
   @@map("tbl_permission")
 }

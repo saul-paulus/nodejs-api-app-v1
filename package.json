@@ -12,6 +12,7 @@
         "prisma:generate": "prisma generate",
         "prisma:migrate": "prisma migrate dev",
         "prisma:studio": "prisma studio",
+        "prisma:seed": "node prisma/seed/index.seed.js",
         "depcruise": "npx dependency-cruiser --config .dependency-cruiser.js --validate src",
         "postinstall": "rm -rf node_modules/@ && ln -s ../src node_modules/@"
     },
