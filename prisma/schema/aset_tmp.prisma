@@ -1,0 +1,23 @@
+model AsetTmp {
+  id_aset_tmp Int @id @default(autoincrement())
+  id_vendor Int 
+  id_merek_mesin Int
+  id_jenis_mesin Int
+  id_kelolaan Int
+  id_kanwil Int 
+  tid String?
+  tid_ecp String?
+  lokasi_atm String
+  codeuker String
+  sn_mesin String 
+  batch_to Int
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@map("tbl_aset_tmp")
+
+  @@index([tid])
+  @@index([codeuker])
+  @@index([batch_to])
+} 

@@ -1,0 +1,11 @@
+model Cabbg {
+   id_cabbg Int    @id @default(autoincrement())
+   cabcabbg String
+   nmcabbg  String
+   codeuker String
+   ind      String
+   kol      Int
+
+   @@unique([codeuker])
+   @@map("tbl_cabbg")
+}

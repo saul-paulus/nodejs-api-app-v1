@@ -1,0 +1,7 @@
+model Kanwil {
+  id_kanwil Int @id @default(autoincrement())
+  nm_kanwil String
+
+  @@unique([nm_kanwil])
+  @@map("tbl_kanwil")
+}
