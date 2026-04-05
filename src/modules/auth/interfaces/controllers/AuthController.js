@@ -1,5 +1,5 @@
-import { successResponse } from '#/shared/utils/apiResponse.js';
 import { StatusCodes } from 'http-status-codes';
+import { successResponse } from '#/shared/utils/apiResponse.js';
 
 export default class AuthController {
   constructor({ loginUser }) {

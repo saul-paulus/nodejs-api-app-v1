@@ -8,7 +8,7 @@ model Users {
   created_at  DateTime @default(now())
   updated_at  DateTime @updatedAt
 
-  roles       UserRole[]
+  roles UserRole[]
 
   @@map("Users")
 }

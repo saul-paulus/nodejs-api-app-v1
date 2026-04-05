@@ -1,11 +1,11 @@
 import ApiError from '#/shared/errors/ApiError.js';
 
 export class TokenService {
-  generateAccessToken(payload) {
+  generateAccessToken(_payload) {
     throw new ApiError(401, 'Not Implement for token generate');
   }
 
-  verifyAccessToken(token) {
+  verifyAccessToken(_token) {
     throw new ApiError(401, 'Not Implement for token generate');
   }
 }

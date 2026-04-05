@@ -5,7 +5,8 @@
     "moduleResolution": "NodeNext",
     "checkJs": false,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "#/*": ["./src/*"]
     }
   },
   "exclude": ["node_modules"]
