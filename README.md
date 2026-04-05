@@ -3,6 +3,7 @@
 [![Node.js Version](https://img.shields.io/badge/Node.js-%3E=18.0.0-brightgreen)](https://nodejs.org/)
 [![Express Version](https://img.shields.io/badge/Express-4.18-blue)](https://expressjs.com/)
 [![Prisma](https://img.shields.io/badge/ORM-Prisma-2b2d42)](https://www.prisma.io/)
+[![CI](https://github.com/saul-paulus/nodejs-api-app-v1/actions/workflows/ci.yml/badge.svg)](https://github.com/saul-paulus/nodejs-api-app-v1/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A maintainable, scalable, and enterprise-ready backend template built with **Node.js** and **Express.js**, following **Clean Architecture** principles and **Modular Design**.
@@ -160,6 +161,16 @@ src/modules/[module_name]/
 - **One Use Case per File**: Keeps code focused, testable, and maintainable.
 - **DTOs for Input**: Never pass raw `req` objects into use cases. Use DTOs to structure data.
 - **Dependency Inversion**: High-level modules (Use Cases) should not depend on low-level modules (Prisma). Both should depend on abstractions (Repository Interfaces).
+
+## ⚙️ Continuous Integration (CI)
+
+This project uses **GitHub Actions** to ensure code quality and stability. Every push or pull request to the `main` branch triggers the CI pipeline, which performs the following:
+
+- **Environment Setup**: Uses Node.js 20.x and a PostgreSQL 15 service container.
+- **Dependency Check**: Runs `npm ci` for clean and repeatable installations.
+- **Prisma Validation**: Validates the database schema and generates the Prisma client.
+- **Dependency Integrity**: Uses `dependency-cruiser` to validate module boundaries.
+- **Automated Testing**: Runs unit and integration tests with Jest.
 
 ## 📄 License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
