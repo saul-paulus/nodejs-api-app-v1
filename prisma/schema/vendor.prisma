@@ -1,0 +1,11 @@
+model Vendor {
+  id_vendor   Int @id @default(autoincrement())
+  nm_vendor   String
+  code_vendor String
+
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+
+  @@unique([code_vendor])
+  @@map("tbl_vendors")
+}

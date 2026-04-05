@@ -1,0 +1,7 @@
+model JenisMesin {
+  id_jenis_mesin Int @id @default(autoincrement())
+  nm_jenis_mesin String
+
+  @@unique([nm_jenis_mesin])
+  @@map("tbl_jenis_mesin")
+}

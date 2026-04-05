@@ -1,0 +1,8 @@
+model Kelolaan {
+  id_kelolaan Int @id @default(autoincrement())
+  nm_kelolaan String
+
+
+  @@unique([nm_kelolaan])
+  @@map("tbl_kelolaan")
+}

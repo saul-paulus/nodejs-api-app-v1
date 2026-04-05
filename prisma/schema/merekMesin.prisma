@@ -1,0 +1,8 @@
+model MerekMesin {
+  id_merek Int @id @default(autoincrement())
+  nm_merek String
+
+  
+  @@unique([nm_merek])
+  @@map("tbl_merek_mesin")
+}

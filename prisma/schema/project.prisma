@@ -1,0 +1,9 @@
+model Project {
+  id_project Int    @id @default(autoincrement())
+  nm_project String
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@map("tbl_project")
+}

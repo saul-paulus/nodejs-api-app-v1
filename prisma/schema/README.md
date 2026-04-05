@@ -15,9 +15,8 @@
 - `prisma/schema/_base.prisma` wajib berisi `generator` + `datasource`
 - File lain khusus `model/enum/type` per domain (contoh: `user.prisma`, `product.prisma`, dst.)
 
-
 npx prisma migrate dev --name add_module_action_to_permission
 
-   "prisma:generate": "prisma generate",
-        "prisma:migrate": "prisma migrate dev",
-        "prisma:studio": "prisma studio",
+"prisma:generate": "prisma generate",
+"prisma:migrate": "prisma migrate dev",
+"prisma:studio": "prisma studio",
