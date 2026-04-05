@@ -16,6 +16,10 @@
         "depcruise": "npx dependency-cruiser --config .dependency-cruiser.js --validate src"
     },
     "jest": {
+        "moduleNameMapper": {
+            "^@/(.*)$": "<rootDir>/src/$1",
+            "^#/(.*)$": "<rootDir>/src/$1"
+        },
         "transform": {
             "^.+\\.[t|j]sx?$": "babel-jest"
         },
