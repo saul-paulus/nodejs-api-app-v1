@@ -106,32 +106,60 @@ npm test tests/integration/auth.integration.test.js
 
 ## 📁 Project Structure
 
+### Global Structure
 ```text
 src/
 ├── modules/                # Domain-driven modules (Authentication, User, etc.)
-├── infrastructure/         # Global external services & database config
+├── infrastructure/         # Global external services & database config (Prisma client, Logger)
 ├── shared/                 # Shared utilities, errors, and middleware
 ├── config/                 # App configurations (Env, Logger)
-├── container.js            # Dependency Injection Registry
+├── container.js            # Dependency Injection Registry (Awilix)
 ├── app.js                  # Express App Setup
 └── server.js               # Application Entry Point
 ```
 
-## 🛠 Modular Development Flow (Clean Architecture)
+### Standard Module Folder Structure
+Every new module (e.g., `Product`, `Order`) should follow this standard structure to maintain Clean Architecture principles:
 
-Following the Clean Architecture principles, here is the standard flow to add a new module (e.g., `Auth`):
+```text
+src/modules/[module_name]/
+├── domain/                      # Blueprints & Business Rules (Pure Logic)
+│   ├── entities/                # Business objects/models
+│   ├── repositories/            # Repository Interfaces (Contracts)
+│   └── services/                # (Optional) Cross-entity domain logic
+│
+├── application/                 # Orchestration & Use Cases
+│   ├── usecases/                # One file per action (e.g., CreateUserUseCase.js)
+│   └── dtos/                    # Data Transfer Objects (Input/Output structures)
+│
+├── infrastructure/              # Technical Details & Implementation
+│   ├── repositories/            # Repository Implementations (e.g., Prisma Repository)
+│   ├── validation/              # Input validation schemas (Joi)
+│   ├── security/                # Module-specific security (Hashing, etc.)
+│   └── services/                # External service implementations
+│
+└── interfaces/                  # Entry Points (Web/API)
+    ├── controllers/             # HTTP Request/Response handling
+    └── routes/                  # API Endpoint definitions
+```
 
-1. **Domain Layer**: Define repository interfaces in `src/modules/auth/domain/repositories/`.
-2. **Infrastructure Layer**: Implement repository using Prisma in `src/modules/auth/infrastructure/repositories/`.
-3. **Application Layer**: Create business logic in `src/modules/auth/application/usecases/`.
-4. **Interfaces Layer**: 
-   - Define controllers in `src/modules/auth/interfaces/controllers/`.
-   - Define routes in `src/modules/auth/interfaces/routes/`.
-5. **Registration**:
-   - **DI**: Awilix automatically loads modules. Register aliases in `src/container.js` if needed.
-   - **Express**: Register the new router in `src/app.js`.
+## 🛠 Modular Development Flow
 
-Refer to the full [Module Development Flow Guide](docs/module-development-flow.md) for naming conventions and code examples.
+1.  **Domain**: Define the business rules and repository contracts.
+2.  **Infrastructure**: Implement the repository contracts (e.g., using Prisma).
+3.  **Application**: Create use cases to orchestrate business logic.
+4.  **Interfaces**: Define controllers and routes to expose the functionality.
+5.  **Registration**:
+    - **DI**: Awilix automatically resolves dependencies. Ensure your classes are exported correctly.
+    - **Express**: Register the new routes in `src/app.js`.
+
+> [!TIP]
+> For a detailed step-by-step example and code snippets, see the **[Module Development Flow Guide](docs/module-development-flow.md)**.
+
+### Best Practices
+- **One Use Case per File**: Keeps code focused, testable, and maintainable.
+- **DTOs for Input**: Never pass raw `req` objects into use cases. Use DTOs to structure data.
+- **Dependency Inversion**: High-level modules (Use Cases) should not depend on low-level modules (Prisma). Both should depend on abstractions (Repository Interfaces).
 
 ## 📄 License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

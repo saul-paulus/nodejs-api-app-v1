@@ -1,22 +1,22 @@
 # Module Development Flow
 
-Dokumentasi ini menjelaskan alur standar untuk menambahkan fitur atau modul baru ke dalam project ini menggunakan prinsip **Clean Architecture**.
+This documentation explains the standard flow for adding new features or modules to this project using **Clean Architecture** principles.
 
-## Arsitektur Layer
+## Layer Architecture
 
-Setiap modul dibagi menjadi 4 layer utama:
-1.  **Domain**: Logika bisnis inti (Entitas & Interface).
-2.  **Application**: Orkestrasi fitur (Use Cases & DTO).
-3.  **Infrastructure**: Implementasi teknis (Database, Security, Third-party).
-4.  **Interfaces**: Entry point (Controllers & Routes).
+Each module is divided into 4 main layers:
+1.  **Domain**: Core business logic (Entities & Interfaces).
+2.  **Application**: Feature orchestration (Use Cases & DTOs).
+3.  **Infrastructure**: Technical implementations (Database, Security, Third-party).
+4.  **Interfaces**: Entry points (Controllers & Routes).
 
 ---
 
-## Langkah-langkah Menambah Modul Baru (Contoh: `Auth`)
+## Steps to Add a New Module (Example: `Auth`)
 
-### 1. Layer Domain
-Tentukan kontrak data dan repository di layer paling dalam.
-- **Entities**: `src/modules/auth/domain/entities/Auth.js` (Opsional).
+### 1. Domain Layer
+Define data contracts and repository interfaces in the innermost layer.
+- **Entities**: `src/modules/auth/domain/entities/Auth.js` (Optional).
 - **Repositories**: `src/modules/auth/domain/repositories/AuthRepository.js` (Interface).
 
 ```javascript
@@ -25,9 +25,9 @@ export default class AuthRepository {
 }
 ```
 
-### 2. Layer Infrastructure (Data Area)
-Implementasikan repository yang sudah didefinisikan di domain.
-- **Repository Impl**: `src/modules/auth/infrastructure/repositories/PrismaAuthRepository.js`.
+### 2. Infrastructure Layer (Data Area)
+Implement the repositories defined in the domain layer.
+- **Repository Implementation**: `src/modules/auth/infrastructure/repositories/PrismaAuthRepository.js`.
 
 ```javascript
 export default class PrismaAuthRepository {
@@ -38,8 +38,8 @@ export default class PrismaAuthRepository {
 }
 ```
 
-### 3. Layer Application
-Buat logika bisnis spesifik untuk fitur tersebut.
+### 3. Application Layer
+Create business logic specific to the feature.
 - **Use Case**: `src/modules/auth/application/usecases/LoginUseCase.js`.
 - **DTO**: `src/modules/auth/application/dtos/auth.dto.js`.
 
@@ -50,13 +50,13 @@ export default class LoginUseCase {
     this.jwtService = jwtService;
   }
   async execute(credentials) {
-    // Logika login...
+    // Login logic...
   }
 }
 ```
 
-### 4. Layer Interfaces
-Buat Controller untuk menangani HTTP request dan Routes untuk definisi endpoint.
+### 4. Interfaces Layer
+Create a Controller to handle HTTP requests and Routes to define endpoints.
 - **Controller**: `src/modules/auth/interfaces/controllers/AuthController.js`.
 - **Routes**: `src/modules/auth/interfaces/routes/auth.routes.js`.
 
@@ -69,13 +69,13 @@ export default ({ authController }) => {
 };
 ```
 
-### 5. Registrasi Global
+### 5. Global Registration
 
 1.  **Awilix (Container)**: 
-    Secara default, Awilix akan melakukan **Auto-load** terhadap semua file di `usecases`, `repositories`, `controllers`, dan `routes`.
-    File `PrismaAuthRepository.js` akan terdaftar sebagai `prismaAuthRepository`.
+    By default, Awilix **auto-loads** all files in `usecases`, `repositories`, `controllers`, and `routes`.
+    The file `PrismaAuthRepository.js` will be registered as `prismaAuthRepository`.
     
-    Jika Anda ingin alias khusus (misal `authRepository`), tambahkan di `src/container.js`:
+    If you want a specific alias (e.g., `authRepository`), add it in `src/container.js`:
     ```javascript
     container.register({
       authRepository: asFunction(({ prismaAuthRepository }) => prismaAuthRepository).scoped(),
@@ -83,15 +83,20 @@ export default ({ authController }) => {
     ```
 
 2.  **Express (App)**:
-    Daftarkan router baru di `src/app.js`:
+    Register the new router in `src/app.js`:
     ```javascript
     app.use('/api/v1/auth', container.resolve('authRoutes'));
     ```
 
 ---
 
-## Ringkasan Penamaan (Convention)
-- **Use Case**: Akhiri dengan `UseCase.js` (CamelCase).
-- **Controller**: Akhiri dengan `Controller.js` (CamelCase).
-- **Routes**: Akhiri dengan `.routes.js` (lowercase).
-- **Repository Implementation**: Awali dengan provider (misal: `PrismaUserRepository.js`).
+## Naming Conventions Summary
+- **Use Case**: End with `UseCase.js` (CamelCase).
+- **Controller**: End with `Controller.js` (CamelCase).
+- **Routes**: End with `.routes.js` (lowercase).
+- **Repository Implementation**: Start with the provider name (e.g., `PrismaUserRepository.js`).
+
+---
+
+## Documentation
+For more details on how to develop modules, please refer to the [Module Development Flow](docs/module-development-flow.md).
