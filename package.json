@@ -1,6 +1,6 @@
 {
     "name": "api-expresjs",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "start build of api with expresjs",
     "main": "index.js",
     "scripts": {

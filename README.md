@@ -5,6 +5,7 @@
 [![Prisma](https://img.shields.io/badge/ORM-Prisma-2b2d42)](https://www.prisma.io/)
 [![CI](https://github.com/saul-paulus/nodejs-api-app-v1/actions/workflows/ci.yml/badge.svg)](https://github.com/saul-paulus/nodejs-api-app-v1/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Latest Release](https://img.shields.io/badge/Release-v1.0.1-blue.svg)](https://github.com/saul-paulus/nodejs-api-app-v1/releases/tag/v1.0.1)
 
 A maintainable, scalable, and enterprise-ready backend template built with **Node.js** and **Express.js**, following **Clean Architecture** principles and **Modular Design**.
 
