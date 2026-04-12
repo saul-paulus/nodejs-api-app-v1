@@ -9,5 +9,6 @@
    },
    "[javascript]": {
       "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-   }
+   },
+   "git.ignoreLimitWarning": true
 }

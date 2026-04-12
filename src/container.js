@@ -12,7 +12,7 @@ export const setupDIContainer = async () => {
     prisma: asValue(prisma),
   });
 
-  await container.loadModules(['modules/**/application/usecases/*.js', 'modules/**/infrastructure/repositories/*.js', 'modules/**/infrastructure/security/*.js', 'modules/**/interfaces/controllers/*.js', 'modules/**/interfaces/routes/*.js'], {
+  await container.loadModules(['modules/**/application/usecases/!(*.test).js', 'modules/**/infrastructure/repositories/!(*.test).js', 'modules/**/infrastructure/security/!(*.test).js', 'modules/**/interfaces/controllers/!(*.test).js', 'modules/**/interfaces/routes/!(*.test).js'], {
     formatName: 'camelCase',
     resolverOptions: {
       lifetime: Lifetime.SCOPED,
