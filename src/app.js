@@ -10,7 +10,18 @@ import swaggerSpec from './swagger.js';
 export const createApp = (container) => {
   const app = express();
 
-  app.use(helmet({ contentSecurityPolicy: false }));
+  app.use(
+    helmet({
+      contentSecurityPolicy: {
+        directives: {
+          ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+          'script-src': ["'self'", "'unsafe-inline'"],
+          'style-src': ["'self'", "'unsafe-inline'"],
+          'img-src': ["'self'", 'data:', 'validator.swagger.io'],
+        },
+      },
+    }),
+  );
   app.use(cors());
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
