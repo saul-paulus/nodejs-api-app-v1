@@ -35,7 +35,6 @@
     "type": "module",
     "dependencies": {
         "@prisma/client": "^6.19.2",
-        "@saulpaulus17/node-module-generator": "^2.0.8",
         "awilix": "^13.0.3",
         "bcrypt": "^6.0.0",
         "cors": "^2.8.6",
